@@ -22,16 +22,16 @@ export const metadata: Metadata = {
   authors: [{ name: 'TalentoYa | J. Sebastian Valle Barbaran' }],
   creator: 'TalentoYa | J. Sebastian Valle Barbaran',
   publisher: 'TalentoYa | J. Sebastian Valle Barbaran',
-  metadataBase: new URL('https://tusitio.com'), // cámbialo por tu dominio real
+  metadataBase: new URL('https://talentoya.vercel.app'), // cámbialo por tu dominio real
   openGraph: {
     title: 'TalentoYa | Gestión de talento humano y nómina para microempresas',
     description:
       'Simplifica la administración de tu equipo: contratos, nómina, seguridad social, turnos y vacaciones. Diseñado para independientes y microempresas en Colombia.',
-    url: 'https://tusitio.com',
+    url: 'https://talentoya.vercel.app',
     siteName: 'TalentoYa | J. Sebastian Valle Barbarán',
     images: [
       {
-        url: 'https://tusitio.com/og-image.jpg', // cambia por la ruta real
+        url: 'https://talentoya.vercel.app/image.png', // cambia por la ruta real
         width: 1200,
         height: 630,
         alt: 'TalentoYa gestión de talento humano',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: 'TalentoYa | Gestión de talento humano y nómina para microempresas e independientes.',
     description:
       'Un SaaS hecho para independientes y microempresas en Colombia. Administra contratos, nómina y seguridad social fácilmente.',
-    images: ['https://tusitio.com/og-image.jpg'],
+    images: ['https://talentoya.vercel.app/image.png'],
     creator: '@ValleeDev', 
   },
   icons: {
