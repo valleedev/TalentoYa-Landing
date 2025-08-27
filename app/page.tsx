@@ -100,24 +100,24 @@ export default function TalentoYaLanding() {
 
               {/* Mailchimp Form */}
               <motion.div 
-                className="space-y-4"
+                className="space-y-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 1.0 }}
               >
-                <p className="text-xl text-white/80 leading-relaxed max-w-lg">Unite a la lista de espera y se de los primeros en obtener mejores beneficios.</p>
+                
                 <form
                   action="http://eepurl.com/jl3yJ6"
                   method="post"
                   target="_blank"
-                  className="flex flex-col sm:flex-row gap-3 max-w-md"
+                  className="max-w-lg"
                 >
                   <Button
                     size="lg"
                     type="submit"
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 w-full"
+                    className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full min-h-[60px] border-2 border-blue-500/20 hover:border-blue-400/40 cursor-pointer"
                   >
-                    Únete a la lista de espera
+                    🚀 Únete a la lista de espera
                   </Button>
                 </form>
               </motion.div>
@@ -388,7 +388,7 @@ export default function TalentoYaLanding() {
             </p>
               {/* Mailchimp Form */}
               <motion.div 
-                className="space-y-4"
+                className="space-y-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 1.0 }}
@@ -397,14 +397,14 @@ export default function TalentoYaLanding() {
                   action="http://eepurl.com/jl3yJ6"
                   method="post"
                   target="_blank"
-                  className=""
+                  className="max-w-2xl mx-auto"
                 >
                   <Button
                     size="lg"
                     type="submit"
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 w-full pointer"
+                    className="bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white text-slate-900 font-semibold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full min-h-[60px] border-2 border-white/20 hover:border-white/40 cursor-pointer"
                   >
-                    Únete a la lista de espera
+                    🎯 ¡Comenzar ahora!
                   </Button>
                 </form>
               </motion.div>
