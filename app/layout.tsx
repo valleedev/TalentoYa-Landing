@@ -1,3 +1,4 @@
+// app/layout.tsx
 import type { Metadata, Viewport } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'TalentoYa | J. Sebastian Valle Barbaran' }],
   creator: 'TalentoYa | J. Sebastian Valle Barbaran',
   publisher: 'TalentoYa | J. Sebastian Valle Barbaran',
-  metadataBase: new URL('https://talentoya.vercel.app'), // cámbialo por tu dominio real
+  metadataBase: new URL('https://talentoya.vercel.app'),
   openGraph: {
     title: 'TalentoYa | Gestión de talento humano y nómina para microempresas',
     description:
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     siteName: 'TalentoYa | J. Sebastian Valle Barbarán',
     images: [
       {
-        url: 'https://talentoya.vercel.app/image.png', // cambia por la ruta real
+        url: 'https://talentoya.vercel.app/image.png',
         width: 1200,
         height: 630,
         alt: 'TalentoYa gestión de talento humano',
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     description:
       'Un SaaS hecho para independientes y microempresas en Colombia. Administra contratos, nómina y seguridad social fácilmente.',
     images: ['https://talentoya.vercel.app/image.png'],
-    creator: '@ValleeDev', 
+    creator: '@ValleeDev',
   },
   icons: {
     icon: '/logo2-negativo-talentoya.svg',
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0A2342', // azul corporativo
+  themeColor: '#0A2342',
 }
 
 export default function RootLayout({
@@ -67,6 +68,8 @@ export default function RootLayout({
     <html lang="es">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         {children}
+        {/* Aquí agregamos Analytics */}
+        <Analytics />
       </body>
     </html>
   )
