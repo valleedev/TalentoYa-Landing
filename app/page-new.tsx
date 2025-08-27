@@ -26,9 +26,9 @@ export default function TalentoYaLanding() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <motion.header 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
         className="border-b border-white/10 bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-slate-900/95 sticky top-0 z-50"
       >
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -49,6 +49,9 @@ export default function TalentoYaLanding() {
             <a href="#caracteristicas" className="text-white/90 hover:text-white transition-colors">
               Características
             </a>
+            <a href="#contacto" className="text-white/90 hover:text-white transition-colors">
+              Contacto
+            </a>
           </nav>
         </div>
       </motion.header>
@@ -65,23 +68,23 @@ export default function TalentoYaLanding() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div 
               className="space-y-8"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -60 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="space-y-6">
                 <motion.p 
                   className="text-white/80 text-lg font-medium"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
                   Gestión de talento humano
                 </motion.p>
                 <motion.h1 
                   className="text-4xl lg:text-5xl font-bold text-white leading-tight"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
                   El Software de gestión de talento humano{" "}
@@ -89,8 +92,8 @@ export default function TalentoYaLanding() {
                 </motion.h1>
                 <motion.p 
                   className="text-xl text-white/80 leading-relaxed max-w-lg"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                 >
                   Centraliza contratos, nómina, vacaciones y seguridad social en un solo lugar
@@ -101,11 +104,11 @@ export default function TalentoYaLanding() {
               {/* Mailchimp Form */}
               <motion.div 
                 className="space-y-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.0 }}
               >
-                <p className="text-xl text-white/80 leading-relaxed max-w-lg">Unite a la lista de espera y se de los primeros en obtener mejores beneficios.</p>
+                <p className="text-xl text-white/80 leading-relaxed max-w-lg">Unirse a la lista de espera</p>
                 <form
                   action="http://eepurl.com/jl3yJ6"
                   method="post"
@@ -117,7 +120,7 @@ export default function TalentoYaLanding() {
                     type="submit"
                     className="bg-blue-600 hover:bg-blue-700 text-white px-6 w-full"
                   >
-                    Únete a la lista de espera
+                    Únete
                   </Button>
                 </form>
               </motion.div>
@@ -126,9 +129,9 @@ export default function TalentoYaLanding() {
             {/* Imagen más pequeña */}
             <motion.div 
               className="relative flex justify-center"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
             >
               <img
                 src="/modern-hr-dashboard-mockup-with-colombian-business.png"
@@ -386,28 +389,18 @@ export default function TalentoYaLanding() {
             <p className="text-xl opacity-90 text-pretty max-w-2xl mx-auto">
               Únete a cientos de empresarios colombianos que ya confían en TalentoYa para gestionar su equipo.
             </p>
-              {/* Mailchimp Form */}
-              <motion.div 
-                className="space-y-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-              >
-                <form
-                  action="http://eepurl.com/jl3yJ6"
-                  method="post"
-                  target="_blank"
-                  className=""
-                >
-                  <Button
-                    size="lg"
-                    type="submit"
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 w-full pointer"
-                  >
-                    Únete a la lista de espera
-                  </Button>
-                </form>
-              </motion.div>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Input type="email" placeholder="tu@email.com" className="flex-1 bg-primary-foreground text-foreground" />
+              <Button size="lg" variant="secondary" className="sm:w-auto">
+                Comenzar gratis
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
       </motion.section>
@@ -436,13 +429,9 @@ export default function TalentoYaLanding() {
               viewport={{ once: true }}
             >
               <div className="flex items-center space-x-2">
-                <img 
-                  src="/logo1-talentoya.png" 
-                  alt="Logo TalentoYa" 
-                  className="w-50 h-auto" 
-                />
+                <Building2 className="h-6 w-6 text-primary" />
+                <span className="text-xl font-bold text-primary">TalentoYa</span>
               </div>
-
               <p className="text-muted-foreground text-pretty">
                 La plataforma de gestión de talento humano más simple y económica para empresarios colombianos.
               </p>
@@ -459,8 +448,8 @@ export default function TalentoYaLanding() {
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Mail className="h-4 w-4" />
-                  <a href="mailto:vallebarbaranj@gmail.com" className="hover:text-primary transition-colors">
-                    vallebarbaranj@gmail.com
+                  <a href="mailto:contacto@talentoya.co" className="hover:text-primary transition-colors">
+                    contacto@talentoya.co
                   </a>
                 </div>
               </div>
@@ -474,7 +463,7 @@ export default function TalentoYaLanding() {
               viewport={{ once: true }}
             >
               <h3 className="font-semibold">Síguenos</h3>
-              {/* <div className="flex gap-4">
+              <div className="flex gap-4">
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                   <Linkedin className="h-5 w-5" />
                 </a>
@@ -484,7 +473,7 @@ export default function TalentoYaLanding() {
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                   <Instagram className="h-5 w-5" />
                 </a>
-              </div> */}
+              </div>
             </motion.div>
           </motion.div>
 
@@ -497,8 +486,7 @@ export default function TalentoYaLanding() {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <p>© 2025 TalentoYa. Todos los derechos reservados. </p>
-            <a href="https://sebasvalle.vercel.app" target="blank" className="text-primary">Conoce al desarrollador</a>
+            <p>© 2025 TalentoYa. Todos los derechos reservados.</p>
           </motion.div>
         </div>
       </motion.footer>
