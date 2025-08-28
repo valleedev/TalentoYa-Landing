@@ -131,7 +131,7 @@ export default function TalentoYaLanding() {
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <img
-                src="/modern-hr-dashboard-mockup-with-colombian-business.png"
+                src="/empleados.jpg"
                 alt="Dashboard de TalentoYa"
                 className="max-w-md w-full h-auto rounded-lg shadow-2xl"
               />
