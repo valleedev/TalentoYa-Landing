@@ -1,5 +1,6 @@
 "use client";
 
+import MailchimpHeroForm from "@/components/MailchimpHeroForm"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -98,29 +99,9 @@ export default function TalentoYaLanding() {
                 </motion.p>
               </div>
 
-              {/* Mailchimp Form */}
-              <motion.div 
-                className="space-y-6"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-              >
-                
-                <form
-                  action="http://eepurl.com/jl3yJ6"
-                  method="post"
-                  target="_blank"
-                  className="max-w-lg"
-                >
-                  <Button
-                    size="lg"
-                    type="submit"
-                    className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full min-h-[60px] border-2 border-blue-500/20 hover:border-blue-400/40 cursor-pointer"
-                  >
-                    🚀 Únete a la lista de espera
-                  </Button>
-                </form>
-              </motion.div>
+              {/* Mailchimp Form - HERO (Minimal) */}
+              <MailchimpHeroForm />
+
             </motion.div>
 
             {/* Imagen más pequeña */}
@@ -386,33 +367,13 @@ export default function TalentoYaLanding() {
             <p className="text-xl opacity-90 text-pretty max-w-2xl mx-auto">
               Únete a cientos de empresarios colombianos que ya confían en TalentoYa para gestionar su equipo.
             </p>
-              {/* Mailchimp Form */}
-              <motion.div 
-                className="space-y-6"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-              >
-                <form
-                  action="http://eepurl.com/jl3yJ6"
-                  method="post"
-                  target="_blank"
-                  className="max-w-2xl mx-auto"
-                >
-                  <Button
-                    size="lg"
-                    type="submit"
-                    className="bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white text-slate-900 font-semibold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full min-h-[60px] border-2 border-white/20 hover:border-white/40 cursor-pointer"
-                  >
-                    🎯 ¡Comenzar ahora!
-                  </Button>
-                </form>
-              </motion.div>
+              {/* Mailchimp Form - HERO (Minimal) */}
+              <MailchimpHeroForm />
+
           </motion.div>
         </div>
       </motion.section>
-
-      {/* Footer */}
+{/* Footer */}
       <motion.footer 
         className="py-12 px-4 bg-muted/30 border-t border-border"
         initial={{ opacity: 0 }}
@@ -502,6 +463,7 @@ export default function TalentoYaLanding() {
           </motion.div>
         </div>
       </motion.footer>
+      
     </div>
   )
 }
