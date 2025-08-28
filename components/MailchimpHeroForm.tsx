@@ -43,7 +43,7 @@ export default function MailchimpHeroForm() {
       transition={{ duration: 0.6, delay: 1.0 }}
     >
       <h3 className="text-sm font-medium text-white/80">
-        🚀 Únete a la lista de espera
+        Únete gratis hoy y recibe acceso anticipado + un beneficio exclusivo por ser de los primeros 10 registrados.
       </h3>
 
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">

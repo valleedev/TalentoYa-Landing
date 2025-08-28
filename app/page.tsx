@@ -420,8 +420,8 @@ export default function TalentoYaLanding() {
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Mail className="h-4 w-4" />
-                  <a href="mailto:vallebarbaranj@gmail.com" className="hover:text-primary transition-colors">
-                    vallebarbaranj@gmail.com
+                  <a href="mailto:info.talentoya@gmail.com" className="hover:text-primary transition-colors">
+                    info.talentoya@gmail.com
                   </a>
                 </div>
               </div>
