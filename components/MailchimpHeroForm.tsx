@@ -52,12 +52,12 @@ export default function MailchimpHeroForm() {
           name="EMAIL"
           required
           placeholder="Tu correo electrónico"
-          className="flex-1 bg-white/90 text-gray-900 placeholder:text-gray-500"
+          className="flex-1 bg-white/90 text-gray-900 placeholder:text-gray-500 !h-14 !text-lg !px-4 !py-3"
         />
         <Button
           type="submit"
           disabled={status === "loading"}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 h-12 sm:w-auto w-full rounded-lg shadow-md hover:shadow-lg transition"
         >
           {status === "loading" ? "Enviando..." : "Unirme"}
         </Button>
