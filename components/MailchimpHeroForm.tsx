@@ -4,8 +4,14 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { Download, Gift, Zap } from "lucide-react"
 
-export default function MailchimpHeroForm() {
+interface MailchimpHeroFormProps {
+  variant?: "hero" | "leadMagnet" | "cta"
+  showTitle?: boolean
+}
+
+export default function MailchimpHeroForm({ variant = "hero", showTitle = true }: MailchimpHeroFormProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -35,47 +41,121 @@ export default function MailchimpHeroForm() {
     }, 1000) // Pequeña demora para mostrar el loading
   }
 
+  // Configuración según variante
+  const config = {
+    hero: {
+      title: "Sé de los primeros en acceder a TalentoYa",
+      subtitle: "20% de descuento en el primer mes",
+      buttonText: "Reservar mi acceso",
+      placeholder: "Tu correo electrónico",
+      successMessage: "🎉 ¡Te has unido a la lista!",
+      footerText: "Únete a más de 50 emprendedores que ya están en lista de espera",
+      icon: <Gift className="h-5 w-5" />
+    },
+    leadMagnet: {
+      title: "Descarga tu plantilla gratis",
+      subtitle: "Recibe la plantilla de liquidación laboral en tu email",
+      buttonText: "Descargar gratis",
+      placeholder: "Tu correo empresarial",
+      successMessage: "📧 ¡Revisa tu email! Te hemos enviado la plantilla",
+      footerText: "100% gratis • No spam • Cancela cuando quieras",
+      icon: <Download className="h-5 w-5" />
+    },
+    cta: {
+      title: "Agenda tu demo personalizada",
+      subtitle: "Te contactaremos en menos de 2 horas",
+      buttonText: "Solicitar demo gratis",
+      placeholder: "Tu correo empresarial",
+      successMessage: "✅ ¡Perfecto! Te contactaremos pronto para agendar tu demo",
+      footerText: "Demo personalizada de 15 minutos • Sin compromiso",
+      icon: <Zap className="h-5 w-5" />
+    }
+  }
+
+  const currentConfig = config[variant]
+
   return (
     <motion.div
-      className="space-y-4"
+      className="space-y-4 w-full max-w-md mx-auto"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, delay: 1.0 }}
+      transition={{ duration: 0.6, delay: variant === "hero" ? 1.0 : 0.2 }}
     >
-      <h3 className="text-sm font-medium text-white/80">
-        Únete gratis hoy y recibe acceso anticipado + un beneficio exclusivo por ser de los primeros 10 registrados.
-      </h3>
+      {showTitle && (
+        <div className="text-center space-y-2">
+          <h3 className={`font-medium ${variant === "hero" ? "text-xl text-white/80" : "text-lg text-gray-700"}`}>
+            {currentConfig.title}
+          </h3>
+          {currentConfig.subtitle && (
+            <p className={`text-sm ${variant === "hero" ? "text-white/60" : "text-gray-500"}`}>
+              {currentConfig.subtitle}
+            </p>
+          )}
+        </div>
+      )}
 
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
         <Input
           type="email"
           name="EMAIL"
           required
-          placeholder="Tu correo electrónico"
-          className="flex-1 bg-white/90 text-gray-900 placeholder:text-gray-500 !h-14 !text-lg !px-4 !py-3"
+          placeholder={currentConfig.placeholder}
+          className={`flex-1 ${
+            variant === "hero" 
+              ? "bg-white/90 text-gray-900 placeholder:text-gray-500 border-white/20" 
+              : "bg-white text-gray-900 placeholder:text-gray-500 border-gray-200"
+          }`}
         />
         <Button
           type="submit"
           disabled={status === "loading"}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 h-12 sm:w-auto w-full rounded-lg shadow-md hover:shadow-lg transition"
+          className={`font-medium px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ${
+            variant === "hero"
+              ? "bg-blue-600 hover:bg-blue-700 text-white"
+              : variant === "leadMagnet"
+              ? "bg-green-600 hover:bg-green-700 text-white"
+              : "bg-blue-600 hover:bg-blue-700 text-white"
+          }`}
         >
-          {status === "loading" ? "Enviando..." : "Unirme"}
+          {currentConfig.icon && (
+            <span className="mr-2">{currentConfig.icon}</span>
+          )}
+          {status === "loading" ? "Enviando..." : currentConfig.buttonText}
         </Button>
       </form>
 
       {status === "success" && (
-        <p className="text-sm text-green-400 text-center">
-          🎉 ¡Te has unido a la lista!
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className={`text-sm text-center p-3 rounded-lg ${
+            variant === "hero" 
+              ? "text-green-400 bg-green-400/10" 
+              : "text-green-600 bg-green-50"
+          }`}
+        >
+          {currentConfig.successMessage}
+        </motion.div>
       )}
+      
       {status === "error" && (
-        <p className="text-sm text-red-400 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className={`text-sm text-center p-3 rounded-lg ${
+            variant === "hero" 
+              ? "text-red-400 bg-red-400/10" 
+              : "text-red-600 bg-red-50"
+          }`}
+        >
           ⚠️ Hubo un error, intenta de nuevo.
-        </p>
+        </motion.div>
       )}
 
-      <p className="text-xs text-white/60 text-center">
-        Sin spam, solo información relevante ✨
+      <p className={`text-xs text-center ${
+        variant === "hero" ? "text-white/60" : "text-gray-500"
+      }`}>
+        {currentConfig.footerText}
       </p>
     </motion.div>
   )
