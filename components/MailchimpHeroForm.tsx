@@ -14,6 +14,16 @@ interface MailchimpHeroFormProps {
 export default function MailchimpHeroForm({ variant = "hero", showTitle = true }: MailchimpHeroFormProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
 
+  // Función para descargar la plantilla
+  const downloadTemplate = () => {
+    const link = document.createElement('a')
+    link.href = '/Plantilla_Nomina_TalentoYa_Bonita.xlsx'
+    link.download = 'Plantilla_Nomina_TalentoYa_Bonita.xlsx'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setStatus("loading")
@@ -37,7 +47,12 @@ export default function MailchimpHeroForm({ variant = "hero", showTitle = true }
     // Como usamos no-cors, asumimos que siempre es exitoso
     setTimeout(() => {
       setStatus("success")
-      form.reset() 
+      form.reset()
+      
+      // Si es el variant leadMagnet, iniciar la descarga automáticamente
+      if (variant === "leadMagnet") {
+        downloadTemplate()
+      }
     }, 1000) // Pequeña demora para mostrar el loading
   }
 
@@ -57,7 +72,7 @@ export default function MailchimpHeroForm({ variant = "hero", showTitle = true }
       subtitle: "Recibe la plantilla de liquidación laboral en tu email",
       buttonText: "Descargar gratis",
       placeholder: "Tu correo empresarial",
-      successMessage: "📧 ¡Revisa tu email! Te hemos enviado la plantilla",
+      successMessage: "✅ ¡Descarga iniciada! También te hemos enviado la plantilla por email",
       footerText: "100% gratis • No spam • Cancela cuando quieras",
       icon: <Download className="h-5 w-5" />
     },
