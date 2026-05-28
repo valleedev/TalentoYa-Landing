@@ -2,6 +2,12 @@
   "name": "my-v0-project",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm",
+    "pnpm": ">=9"
+  },
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -61,7 +67,7 @@
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "tsparticles-slim": "^2.12.0",
-    "vaul": "^0.9.9",
+    "vaul": "^1.1.2",
     "zod": "3.25.67"
   },
   "devDependencies": {

@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     creator: '@ValleeDev',
   },
   icons: {
-    icon: '/logo2-negativo-talentoya.svg',
+    icon: '/assets/logos/logo2-negativo-talentoya.svg',
   },
 }
 
