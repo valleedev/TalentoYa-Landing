@@ -65,9 +65,14 @@ export function MailchimpHeroForm({ variant = "hero", showTitle = true }: Mailch
     setStatus("loading")
     const formData = new FormData(e.currentTarget)
     const form = e.currentTarget
-    const params = new URLSearchParams(formData as any).toString()
+    const params = new URLSearchParams()
+    formData.forEach((value, key) => {
+      if (typeof value === "string") {
+        params.append(key, value)
+      }
+    })
 
-    fetch(`${MAILCHIMP_URL}&${params}`, { method: "GET", mode: "no-cors" })
+    fetch(`${MAILCHIMP_URL}&${params.toString()}`, { method: "GET", mode: "no-cors" })
 
     setTimeout(() => {
       setStatus("success")

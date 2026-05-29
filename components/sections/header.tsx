@@ -31,6 +31,13 @@ export function Header() {
             </a>
           ))}
           <Button
+            variant="ghost"
+            className="text-white hover:bg-white/10 hover:text-white"
+            asChild
+          >
+            <a href="/login">Iniciar sesión</a>
+          </Button>
+          <Button
             variant="outline"
             className="bg-transparent border-white text-white hover:bg-white hover:text-slate-900"
             asChild

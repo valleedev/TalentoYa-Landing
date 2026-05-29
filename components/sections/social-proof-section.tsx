@@ -40,8 +40,8 @@ export function SocialProofSection() {
           >
             <Quote className="h-12 w-12 text-blue-400 mb-6 mx-auto" />
             <blockquote className="text-xl md:text-2xl text-gray-700 font-medium leading-relaxed mb-8">
-              "Antes me tomaba todo un día hacer la nómina de mis 8 empleados. Ahora con TalentoYa
-              lo hago en 30 minutos y sin errores. Mi contador está feliz porque todo llega perfecto."
+              &ldquo;Antes me tomaba todo un día hacer la nómina de mis 8 empleados. Ahora con TalentoYa
+              lo hago en 30 minutos y sin errores. Mi contador está feliz porque todo llega perfecto.&rdquo;
             </blockquote>
             <div className="flex items-center justify-center gap-4">
               <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center text-2xl font-bold text-gray-600">
