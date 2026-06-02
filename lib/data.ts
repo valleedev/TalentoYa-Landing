@@ -2,12 +2,16 @@ import type { LucideIcon } from "lucide-react"
 import {
   Bell,
   Building2,
+  Calendar,
+  CheckCircle,
   Clock,
   Cloud,
   FileText,
   Receipt,
   Shield,
   TrendingUp,
+  Users,
+  Zap,
 } from "lucide-react"
 
 export interface NavLink {
@@ -19,7 +23,7 @@ export const navLinks: NavLink[] = [
   { href: "#inicio", label: "Inicio" },
   { href: "#beneficios", label: "Beneficios" },
   { href: "#caracteristicas", label: "Características" },
-  { href: "#planes", label: "Planes" },
+  { href: "#demo", label: "Demo" },
 ]
 
 export type ColorKey = "blue" | "green" | "purple" | "orange"
@@ -117,64 +121,32 @@ export const stats: Stat[] = [
   { value: "0", label: "Errores reportados", color: "purple" },
 ]
 
-export interface PricingPlan {
-  name: string
-  price: string
-  period: string
-  description: string
-  features: string[]
-  highlighted: boolean
-  badge?: string
+export interface DemoBullet {
+  icon: LucideIcon
+  text: string
 }
 
-export const pricingPlans: PricingPlan[] = [
-  {
-    name: "Básico",
-    price: "$49.900",
-    period: "COP/mes",
-    description: "Perfecto para emprendedores",
-    features: [
-      "Hasta 3 empleados",
-      "Nómina básica",
-      "Contratos básicos",
-      "Soporte por email",
-    ],
-    highlighted: false,
-  },
-  {
-    name: "PyME",
-    price: "$89.900",
-    period: "COP/mes",
-    description: "Ideal para pequeñas empresas",
-    features: [
-      "Hasta 15 empleados",
-      "Nómina completa",
-      "Todos los contratos",
-      "Alertas automáticas",
-      "Soporte prioritario",
-    ],
-    highlighted: true,
-    badge: "Más Popular",
-  },
-  {
-    name: "Pro",
-    price: "$149.900",
-    period: "COP/mes",
-    description: "Para empresas en crecimiento",
-    features: [
-      "Empleados ilimitados",
-      "Funciones avanzadas",
-      "Reportes detallados",
-      "API integración",
-      "Soporte 24/7",
-    ],
-    highlighted: false,
-  },
-]
+export const demoSection = {
+  heading: "Agenda tu demo en minutos",
+  subheading:
+    "Te mostramos cómo TalentoYa transforma tu nómina en una llamada de 15 minutos. Sin compromiso.",
+  bulletsHeading: "¿Qué pasa en la demo?",
+  bullets: [
+    { icon: Calendar, text: "Elige el horario que más te convenga" },
+    { icon: Users, text: "15 minutos, sin presión de ventas" },
+    { icon: CheckCircle, text: "Configuramos TalentoYa con tu caso real" },
+    { icon: Zap, text: "Si no es para ti, te ayudamos igual" },
+  ] as DemoBullet[],
+  socialProof: "Más de 50 empresas colombianas ya confían en TalentoYa",
+  formHeading: "Solicita tu demo personalizada",
+  formSubheading: "Te contactaremos en menos de 2 horas",
+  successMessage:
+    "¡Gracias! Te contactaremos en menos de 2 horas para agendar tu demo.",
+}
 
 export const footerQuickLinks: NavLink[] = [
-  { href: "#planes", label: "Planes y Precios" },
-  { href: "#demo", label: "Demo Gratis" },
-  { href: "#plantilla", label: "Plantilla Gratis" },
+  { href: "#demo", label: "Agenda una demo" },
   { href: "#caracteristicas", label: "Características" },
+  { href: "#beneficios", label: "Beneficios" },
+  { href: "/login", label: "Iniciar sesión" },
 ]

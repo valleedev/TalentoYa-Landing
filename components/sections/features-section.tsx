@@ -5,7 +5,7 @@ import { CheckCircle } from "lucide-react"
 import { features, type ColorKey } from "@/lib/data"
 
 const colorMap: Record<ColorKey, { bg: string; icon: string }> = {
-  blue: { bg: "bg-blue-100", icon: "text-blue-600" },
+  blue: { bg: "bg-violet-100", icon: "text-violet-600" },
   green: { bg: "bg-green-100", icon: "text-green-600" },
   purple: { bg: "bg-purple-100", icon: "text-purple-600" },
   orange: { bg: "bg-orange-100", icon: "text-orange-600" },
@@ -64,7 +64,7 @@ export function FeaturesSection() {
                 <div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">{feature.title}</h3>
                   <p className="text-gray-600 text-lg leading-relaxed">{feature.description}</p>
-                  <div className="mt-3 inline-flex items-center gap-2 text-sm text-green-600 font-medium">
+                  <div className="mt-3 inline-flex items-center gap-2 text-sm text-[#6600ff] font-medium">
                     <CheckCircle className="h-4 w-4" />
                     <span>{feature.badge}</span>
                   </div>

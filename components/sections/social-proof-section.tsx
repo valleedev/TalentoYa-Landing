@@ -5,7 +5,7 @@ import { Quote } from "lucide-react"
 import { stats } from "@/lib/data"
 
 const statColorMap: Record<"blue" | "green" | "purple", string> = {
-  blue: "text-blue-600",
+  blue: "text-[#6600ff]",
   green: "text-green-600",
   purple: "text-purple-600",
 }
@@ -32,13 +32,13 @@ export function SocialProofSection() {
           </h2>
 
           <motion.div
-            className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 md:p-12 relative"
+            className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl p-8 md:p-12 relative"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Quote className="h-12 w-12 text-blue-400 mb-6 mx-auto" />
+            <Quote className="h-12 w-12 text-violet-500 mb-6 mx-auto" />
             <blockquote className="text-xl md:text-2xl text-gray-700 font-medium leading-relaxed mb-8">
               &ldquo;Antes me tomaba todo un día hacer la nómina de mis 8 empleados. Ahora con TalentoYa
               lo hago en 30 minutos y sin errores. Mi contador está feliz porque todo llega perfecto.&rdquo;

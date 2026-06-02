@@ -10,12 +10,12 @@ export function Header() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="border-b border-white/10 bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-slate-900/95 sticky top-0 z-50"
+      className="border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/95 sticky top-0 z-50"
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <img
-            src="/assets/logos/logo1-negativo-talentoya.png"
+            src="/assets/logos/logo1-talentoya.png"
             alt="TalentoYa"
             className="w-50"
           />
@@ -25,24 +25,23 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-white/90 hover:text-white transition-colors"
+              className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium"
             >
               {link.label}
             </a>
           ))}
           <Button
             variant="ghost"
-            className="text-white hover:bg-white/10 hover:text-white"
+            className="text-gray-600 hover:text-gray-900 hover:bg-gray-100"
             asChild
           >
             <a href="/login">Iniciar sesión</a>
           </Button>
           <Button
-            variant="outline"
-            className="bg-transparent border-white text-white hover:bg-white hover:text-slate-900"
+            className="bg-[#6600ff] hover:bg-[#5500d4] text-white"
             asChild
           >
-            <a href="#demo">Demo Gratis</a>
+            <a href="#demo">Agenda tu demo</a>
           </Button>
         </nav>
       </div>

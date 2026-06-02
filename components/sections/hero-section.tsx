@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, Download, Shield, Zap } from "lucide-react"
+import { CheckCircle, Shield, Zap } from "lucide-react"
 import ParticlesBackground from "@/components/particles-background"
 
 export function HeroSection() {
@@ -41,7 +41,7 @@ export function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 Ahorra hasta{" "}
-                <span style={{ color: "rgb(62, 60, 255)" }}>80% de tiempo</span>{" "}
+                <span className="text-[#6600ff]">80% de tiempo</span>{" "}
                 en tu nómina
               </motion.h1>
 
@@ -64,23 +64,12 @@ export function HeroSection() {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
+                className="bg-[#6600ff] hover:bg-[#5500d4] text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
                 asChild
               >
                 <a href="#demo">
                   <Zap className="h-5 w-5 mr-2" />
-                  Solicita tu demo gratis
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-slate-900 font-semibold py-4 px-8 rounded-lg transition-all duration-300 text-lg"
-                asChild
-              >
-                <a href="#plantilla">
-                  <Download className="h-5 w-5 mr-2" />
-                  Descarga plantilla gratis
+                  Agenda tu demo
                 </a>
               </Button>
             </motion.div>
@@ -92,7 +81,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 1.2 }}
             >
               <CheckCircle className="h-4 w-4 text-green-400" />
-              <span>Sin permanencia • Cancela cuando quieras • Soporte en español</span>
+              <span>Sin tarjeta de crédito • Demo en 15 min • Soporte en español</span>
             </motion.div>
           </motion.div>
 

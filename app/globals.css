@@ -4,40 +4,39 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color scheme to match TalentoYa corporate branding with dark blue, light blue, and white */
-  --background: oklch(1 0 0); /* White background */
-  --foreground: oklch(0.2 0.05 240); /* Dark blue for text */
-  --card: oklch(0.98 0.02 200); /* Light blue for card backgrounds */
-  --card-foreground: oklch(0.2 0.05 240); /* Dark blue for text on cards */
-  --popover: oklch(1 0 0); /* White for popovers */
-  --popover-foreground: oklch(0.3 0.02 220); /* Dark gray for popover text */
-  --primary: oklch(0.2 0.05 240); /* Dark blue for primary actions */
-  --primary-foreground: oklch(1 0 0); /* White text on primary buttons */
-  --secondary: oklch(0.6 0.15 220); /* Sky blue for secondary actions */
-  --secondary-foreground: oklch(1 0 0); /* White text on secondary buttons */
-  --muted: oklch(0.97 0.01 220); /* Light gray for muted elements */
-  --muted-foreground: oklch(0.4 0.02 220); /* Dark gray for muted text */
-  --accent: oklch(0.6 0.15 220); /* Sky blue for accents */
-  --accent-foreground: oklch(1 0 0); /* White text for accent elements */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.13 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.13 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.13 0 0);
+  --primary: oklch(0.39 0.27 280);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.5 0.18 280);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.5 0.18 280);
+  --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0.01 220); /* Light gray for borders */
-  --input: oklch(1 0 0); /* White for input fields */
-  --ring: oklch(0.6 0.15 220 / 0.5); /* Light blue ring for focus states */
-  --chart-1: oklch(0.2 0.05 240); /* Dark blue for chart elements */
-  --chart-2: oklch(0.6 0.15 220); /* Sky blue for chart elements */
-  --chart-3: oklch(0.98 0.02 200); /* Light blue for chart elements */
-  --chart-4: oklch(0.3 0.02 220); /* Dark gray for chart elements */
-  --chart-5: oklch(0.97 0.01 220); /* Light gray for chart elements */
-  --radius: 0.5rem; /* Rounded corners for modern look */
-  --sidebar: oklch(0.97 0.01 220); /* Light gray for sidebar background */
-  --sidebar-foreground: oklch(0.2 0.05 240); /* Dark blue for sidebar text */
-  --sidebar-primary: oklch(1 0 0); /* White for primary sidebar elements */
-  --sidebar-primary-foreground: oklch(0.2 0.05 240); /* Dark blue for primary sidebar text */
-  --sidebar-accent: oklch(0.6 0.15 220); /* Sky blue for sidebar accents */
-  --sidebar-accent-foreground: oklch(1 0 0); /* White text for sidebar accents */
-  --sidebar-border: oklch(0.9 0.01 220); /* Light gray for sidebar borders */
-  --sidebar-ring: oklch(0.6 0.15 220 / 0.5); /* Light blue ring for sidebar focus states */
+  --border: oklch(0.922 0 0);
+  --input: oklch(1 0 0);
+  --ring: oklch(0.39 0.27 280 / 0.4);
+  --chart-1: oklch(0.39 0.27 280);
+  --chart-2: oklch(0.5 0.18 280);
+  --chart-3: oklch(0.65 0.15 280);
+  --chart-4: oklch(0.3 0 0);
+  --chart-5: oklch(0.97 0 0);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.97 0 0);
+  --sidebar-foreground: oklch(0.13 0 0);
+  --sidebar-primary: oklch(1 0 0);
+  --sidebar-primary-foreground: oklch(0.13 0 0);
+  --sidebar-accent: oklch(0.5 0.18 280);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.39 0.27 280 / 0.4);
 }
 
 .dark {
@@ -129,10 +128,8 @@
   }
 }
 
-/* Adding Factus-inspired hero section with gradient background and animated particles */
 .hero-gradient {
-  /* Making the blue background darker */
-  background: linear-gradient(135deg, #050510 0%, #0f0f2a 30%, #1a1a4a 70%, #252560 100%);
+  background: linear-gradient(135deg, #0d0018 0%, #1a0033 30%, #2d0066 70%, #3d0099 100%);
   position: relative;
   overflow: hidden;
 }
@@ -144,162 +141,15 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.2) 0%, transparent 50%);
-  animation: float 20s ease-in-out infinite;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(102, 0, 255, 0.35) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(168, 85, 247, 0.2) 0%, transparent 50%);
 }
 
-.floating-particles {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+.calendly-inline-widget {
+  min-width: 320px;
+  height: 630px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-}
-
-.particle {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  animation: floatParticle 8s infinite linear;
-}
-
-.particle:nth-child(1) {
-  width: 8px;
-  height: 8px;
-  left: 10%;
-  animation-delay: 0s;
-}
-.particle:nth-child(2) {
-  width: 12px;
-  height: 12px;
-  left: 20%;
-  animation-delay: 1s;
-}
-.particle:nth-child(3) {
-  width: 6px;
-  height: 6px;
-  left: 30%;
-  animation-delay: 2s;
-}
-.particle:nth-child(4) {
-  width: 10px;
-  height: 10px;
-  left: 40%;
-  animation-delay: 3s;
-}
-.particle:nth-child(5) {
-  width: 7px;
-  height: 7px;
-  left: 50%;
-  animation-delay: 4s;
-}
-.particle:nth-child(6) {
-  width: 14px;
-  height: 14px;
-  left: 60%;
-  animation-delay: 5s;
-}
-.particle:nth-child(7) {
-  width: 5px;
-  height: 5px;
-  left: 70%;
-  animation-delay: 6s;
-}
-.particle:nth-child(8) {
-  width: 9px;
-  height: 9px;
-  left: 80%;
-  animation-delay: 7s;
-}
-.particle:nth-child(9) {
-  width: 8px;
-  height: 8px;
-  left: 90%;
-  animation-delay: 0.5s;
-}
-.particle:nth-child(10) {
-  width: 6px;
-  height: 6px;
-  left: 15%;
-  animation-delay: 1.5s;
-}
-.particle:nth-child(11) {
-  width: 11px;
-  height: 11px;
-  left: 25%;
-  animation-delay: 2.5s;
-}
-.particle:nth-child(12) {
-  width: 7px;
-  height: 7px;
-  left: 35%;
-  animation-delay: 3.5s;
-}
-.particle:nth-child(13) {
-  width: 13px;
-  height: 13px;
-  left: 45%;
-  animation-delay: 4.5s;
-}
-.particle:nth-child(14) {
-  width: 5px;
-  height: 5px;
-  left: 55%;
-  animation-delay: 5.5s;
-}
-.particle:nth-child(15) {
-  width: 9px;
-  height: 9px;
-  left: 65%;
-  animation-delay: 6.5s;
-}
-.particle:nth-child(16) {
-  width: 8px;
-  height: 8px;
-  left: 75%;
-  animation-delay: 7.5s;
-}
-.particle:nth-child(17) {
-  width: 15px;
-  height: 15px;
-  left: 85%;
-  animation-delay: 0.8s;
-}
-.particle:nth-child(18) {
-  width: 6px;
-  height: 6px;
-  left: 95%;
-  animation-delay: 1.8s;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  33% {
-    transform: translateY(-10px) rotate(1deg);
-  }
-  66% {
-    transform: translateY(5px) rotate(-1deg);
-  }
-}
-
-@keyframes floatParticle {
-  0% {
-    /* Making particles travel faster and diagonally */
-    transform: translateY(100vh) translateX(-150px) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-150px) translateX(200px) rotate(360deg);
-    opacity: 0;
-  }
 }

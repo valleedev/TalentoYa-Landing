@@ -5,7 +5,11 @@ import { motion } from "framer-motion"
 import { Download, Gift, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { MAILCHIMP_URL, TEMPLATE_FILE, TEMPLATE_FILENAME } from "@/lib/constants"
+// Archived — re-wire via constants.ts if reactivating
+const MAILCHIMP_URL =
+  "https://gmail.us1.list-manage.com/subscribe/post-json?u=e1b6a1652a46e8bdbb9526208&id=974291b7f1&c=?"
+const TEMPLATE_FILE = "/Plantilla_Nomina_TalentoYa_Bonita.xlsx"
+const TEMPLATE_FILENAME = "Plantilla_Nomina_TalentoYa_Bonita.xlsx"
 
 interface MailchimpHeroFormProps {
   variant?: "hero" | "leadMagnet" | "cta"

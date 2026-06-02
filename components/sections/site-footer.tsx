@@ -81,7 +81,7 @@ export function SiteFooter() {
             <h3 className="font-bold text-lg text-white">Contacto</h3>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-300">
-                <Mail className="h-5 w-5 text-blue-400" />
+                <Mail className="h-5 w-5 text-violet-400" />
                 <a
                   href="mailto:info.talentoya@gmail.com"
                   className="hover:text-white transition-colors"
@@ -121,7 +121,7 @@ export function SiteFooter() {
               href="https://sebasvalle.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 transition-colors"
+              className="text-violet-400 hover:text-violet-300 transition-colors"
             >
               Conoce al desarrollador
             </a>

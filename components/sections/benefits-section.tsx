@@ -6,10 +6,10 @@ import { benefits, type ColorKey } from "@/lib/data"
 
 const colorMap: Record<ColorKey, { bg: string; icon: string; title: string; border: string }> = {
   blue: {
-    bg: "bg-blue-100",
-    icon: "text-blue-600",
-    title: "text-blue-900",
-    border: "hover:border-blue-200",
+    bg: "bg-violet-100",
+    icon: "text-violet-600",
+    title: "text-violet-900",
+    border: "hover:border-violet-200",
   },
   green: {
     bg: "bg-green-100",

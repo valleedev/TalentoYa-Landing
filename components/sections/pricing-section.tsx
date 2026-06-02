@@ -4,7 +4,36 @@ import { motion } from "framer-motion"
 import { CheckCircle, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { pricingPlans } from "@/lib/data"
+// Archived — pricing removed from landing. Data kept inline for reference.
+const pricingPlans = [
+  {
+    name: "Básico",
+    price: "$49.900",
+    period: "COP/mes",
+    description: "Perfecto para emprendedores",
+    features: ["Hasta 3 empleados", "Nómina básica", "Contratos básicos", "Soporte por email"],
+    highlighted: false,
+    badge: undefined as string | undefined,
+  },
+  {
+    name: "PyME",
+    price: "$89.900",
+    period: "COP/mes",
+    description: "Ideal para pequeñas empresas",
+    features: ["Hasta 15 empleados", "Nómina completa", "Todos los contratos", "Alertas automáticas", "Soporte prioritario"],
+    highlighted: true,
+    badge: "Más Popular" as string | undefined,
+  },
+  {
+    name: "Pro",
+    price: "$149.900",
+    period: "COP/mes",
+    description: "Para empresas en crecimiento",
+    features: ["Empleados ilimitados", "Funciones avanzadas", "Reportes detallados", "API integración", "Soporte 24/7"],
+    highlighted: false,
+    badge: undefined as string | undefined,
+  },
+]
 
 export function PricingSection() {
   return (

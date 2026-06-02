@@ -31,7 +31,7 @@ export default function ParticlesBackground() {
         },
         particles: {
           color: {
-            value: ["#ffffff", "#3b82f6", "#6366f1", "#8b5cf6"],
+            value: ["#ffffff", "#6600ff", "#7c3aed", "#a855f7"],
           },
           move: {
             direction: "bottom-right",
