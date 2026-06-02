@@ -161,6 +161,9 @@ importers:
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@4.1.12)
+      tsparticles-engine:
+        specifier: ^2.12.0
+        version: 2.12.0
       tsparticles-slim:
         specifier: ^2.12.0
         version: 2.12.0
