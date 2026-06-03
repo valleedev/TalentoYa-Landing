@@ -1,15 +1,15 @@
 import type { LucideIcon } from "lucide-react"
 import {
-  Bell,
-  Building2,
+  Archive,
+  Award,
+  Calculator,
   Calendar,
   CheckCircle,
-  Clock,
-  Cloud,
+  FileCheck,
   FileText,
-  Receipt,
+  FolderOpen,
   Shield,
-  TrendingUp,
+  User,
   Users,
   Zap,
 } from "lucide-react"
@@ -37,32 +37,32 @@ export interface Benefit {
 
 export const benefits: Benefit[] = [
   {
-    icon: Clock,
+    icon: FolderOpen,
     color: "blue",
-    title: "Ahorra hasta 80% de tiempo",
+    title: "Expediente digital completo",
     description:
-      "Lo que antes te tomaba horas, ahora son minutos. Automatiza cálculos y genera documentos al instante.",
+      "Toda la información de cada empleado centralizada: datos personales, documentos, historial y contratos en un perfil organizado.",
   },
   {
     icon: Shield,
     color: "green",
-    title: "100% legal en Colombia",
+    title: "Contratos 100% legales",
     description:
-      "Cumple automáticamente con todas las regulaciones laborales colombianas vigentes.",
+      "Genera contratos que cumplen con el Código Sustantivo del Trabajo. Término fijo, indefinido, obra o labor — sin plantillas genéricas.",
   },
   {
-    icon: TrendingUp,
+    icon: Award,
     color: "purple",
-    title: "Reduce errores a 0%",
+    title: "Certificados en segundos",
     description:
-      "Elimina errores costosos en nómina con cálculos automáticos precisos.",
+      "Certificados laborales, de ingresos y retenciones con un clic. Formato correcto, datos precisos, sin demoras.",
   },
   {
-    icon: Cloud,
+    icon: Archive,
     color: "orange",
-    title: "Acceso desde cualquier lugar",
+    title: "Historial laboral completo",
     description:
-      "Tu información segura en la nube, disponible 24/7 desde cualquier dispositivo.",
+      "Registro permanente de salarios, cargos, cambios de contrato y documentos adjuntos. Sin papeles, sin extravíos.",
   },
 ]
 
@@ -76,36 +76,36 @@ export interface Feature {
 
 export const features: Feature[] = [
   {
-    icon: FileText,
+    icon: User,
     color: "blue",
-    title: "Contratos automáticos 100% legales",
+    title: "Perfil completo del empleado",
     description:
-      "Plantillas pre-configuradas que cumplen con el Código Sustantivo del Trabajo de Colombia.",
+      "Centraliza datos personales, contacto de emergencia, información bancaria y documentos en un solo expediente digital accesible desde cualquier dispositivo.",
+    badge: "Un solo lugar para todo el equipo",
+  },
+  {
+    icon: FileText,
+    color: "green",
+    title: "Contratos y documentos digitales",
+    description:
+      "Plantillas pre-configuradas para término fijo, indefinido y obra o labor. Generación automática, descarga en PDF, sin errores de digitación.",
     badge: "Cumple con la ley laboral colombiana",
   },
   {
-    icon: Receipt,
-    color: "green",
-    title: "Desprendibles de pago profesionales",
-    description:
-      "Genera desprendibles en PDF con todos los detalles requeridos por la ley colombiana en segundos.",
-    badge: "Formato oficial colombiano",
-  },
-  {
-    icon: Bell,
-    color: "orange",
-    title: "Alertas inteligentes de seguridad social",
-    description:
-      "Nunca olvides un pago de EPS, pensión y ARL con recordatorios automáticos y fechas de vencimiento.",
-    badge: "Evita multas y sanciones",
-  },
-  {
-    icon: Building2,
+    icon: FileCheck,
     color: "purple",
-    title: "Pensado para microempresas y PYMEs",
+    title: "Certificados y reportes laborales",
     description:
-      "Interfaz simple, precios accesibles y funciones específicas para pequeños negocios en crecimiento.",
-    badge: "Diseñado para empresarios colombianos",
+      "Genera certificados de trabajo e ingresos con los datos exactos del expediente. Profesionales, listos para entregar, en segundos.",
+    badge: "Sin errores, sin demoras",
+  },
+  {
+    icon: Calculator,
+    color: "orange",
+    title: "Nómina integrada al expediente",
+    description:
+      "El pago de nómina fluye desde el expediente de cada empleado. Sin doble digitación, sin inconsistencias, sin multas.",
+    badge: "Pensado para microempresas colombianas",
   },
 ]
 
@@ -116,9 +116,9 @@ export interface Stat {
 }
 
 export const stats: Stat[] = [
-  { value: "50+", label: "Empresas confían en nosotros", color: "blue" },
-  { value: "200+", label: "Empleados gestionados", color: "green" },
-  { value: "0", label: "Errores reportados", color: "purple" },
+  { value: "50+", label: "Empresas confían en TalentoYa", color: "blue" },
+  { value: "500+", label: "Empleados con expediente digital", color: "green" },
+  { value: "0", label: "Documentos extraviados", color: "purple" },
 ]
 
 export interface DemoBullet {
@@ -127,14 +127,14 @@ export interface DemoBullet {
 }
 
 export const demoSection = {
-  heading: "Agenda tu demo en minutos",
+  heading: "Agenda una demostración",
   subheading:
-    "Te mostramos cómo TalentoYa transforma tu nómina en una llamada de 15 minutos. Sin compromiso.",
+    "Te mostramos cómo centralizar el expediente de cada empleado en minutos. Sin compromiso.",
   bulletsHeading: "¿Qué pasa en la demo?",
   bullets: [
     { icon: Calendar, text: "Elige el horario que más te convenga" },
     { icon: Users, text: "15 minutos, sin presión de ventas" },
-    { icon: CheckCircle, text: "Configuramos TalentoYa con tu caso real" },
+    { icon: CheckCircle, text: "Configuramos TalentoYa con tu equipo real" },
     { icon: Zap, text: "Si no es para ti, te ayudamos igual" },
   ] as DemoBullet[],
   socialProof: "Más de 50 empresas colombianas ya confían en TalentoYa",

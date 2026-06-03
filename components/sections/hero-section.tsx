@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, Shield, Zap } from "lucide-react"
-import ParticlesBackground from "@/components/particles-background"
+import { CheckCircle, Users, Zap } from "lucide-react"
 
 export function HeroSection() {
   return (
@@ -11,8 +10,6 @@ export function HeroSection() {
       id="inicio"
       className="hero-gradient py-20 px-4 relative min-h-[80vh] flex items-center overflow-hidden"
     >
-      <ParticlesBackground />
-
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -23,36 +20,35 @@ export function HeroSection() {
           >
             <div className="space-y-6">
               <motion.div
-                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2"
+                className="inline-flex items-center gap-2 bg-violet-50 border border-violet-200 rounded-full px-4 py-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <Shield className="h-4 w-4 text-green-400" />
-                <span className="text-sm text-white/90 font-medium">
-                  Hecho en Colombia para microempresas y PYMEs
+                <Users className="h-4 w-4 text-violet-600" />
+                <span className="text-sm text-violet-700 font-medium">
+                  Plataforma de gestión de talento para empresas colombianas
                 </span>
               </motion.div>
 
               <motion.h1
-                className="text-4xl lg:text-6xl font-bold text-white leading-tight"
+                className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                Ahorra hasta{" "}
-                <span className="text-[#6600ff]">80% de tiempo</span>{" "}
-                en tu nómina
+                Gestiona tu equipo{" "}
+                <span className="text-[#6600ff]">con orden y claridad</span>
               </motion.h1>
 
               <motion.p
-                className="text-xl text-white/80 leading-relaxed max-w-lg"
+                className="text-xl text-gray-600 leading-relaxed max-w-lg"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                La plataforma de gestión de talento humano más simple para microempresas colombianas.{" "}
-                <strong className="text-white">Cumple 100% con la ley laboral</strong> y elimina el papeleo.
+                Expediente digital, contratos, documentos y certificados laborales de cada empleado —{" "}
+                <strong className="text-gray-900">todo en un solo lugar.</strong>
               </motion.p>
             </div>
 
@@ -75,13 +71,13 @@ export function HeroSection() {
             </motion.div>
 
             <motion.div
-              className="flex items-center gap-2 text-white/70 text-sm"
+              className="flex items-center gap-2 text-gray-500 text-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 1.2 }}
             >
-              <CheckCircle className="h-4 w-4 text-green-400" />
-              <span>Sin tarjeta de crédito • Demo en 15 min • Soporte en español</span>
+              <CheckCircle className="h-4 w-4 text-green-500" />
+              <span>Sin tarjeta de crédito  •  Soporte en español  •  Cumple ley laboral colombiana</span>
             </motion.div>
           </motion.div>
 
@@ -92,9 +88,9 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <img
-              src="/empleados.jpg"
-              alt="Dashboard de TalentoYa"
-              className="max-w-md w-full h-auto rounded-lg shadow-2xl"
+              src="/dashboard-preview.png"
+              alt="Dashboard de TalentoYa — gestión de empleados"
+              className="max-w-lg w-full h-auto rounded-xl shadow-2xl border border-gray-200"
             />
           </motion.div>
         </div>

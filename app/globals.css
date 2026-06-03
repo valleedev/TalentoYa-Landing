@@ -129,22 +129,9 @@
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, #0d0018 0%, #1a0033 30%, #2d0066 70%, #3d0099 100%);
+  background: linear-gradient(160deg, #ffffff 0%, #f8f5ff 50%, #f0ebff 100%);
   position: relative;
   overflow: hidden;
-}
-
-.hero-gradient::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image:
-    radial-gradient(circle at 20% 80%, rgba(102, 0, 255, 0.35) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(168, 85, 247, 0.2) 0%, transparent 50%);
 }
 
 .calendly-inline-widget {
