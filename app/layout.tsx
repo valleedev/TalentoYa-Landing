@@ -52,12 +52,13 @@ export const metadata: Metadata = {
     creator: '@ValleeDev',
   },
   icons: {
-    icon: '/assets/logos/logo2-negativo-talentoya.svg',
+    icon: '/assets/logos/isotipo-redondeado.png',
+    apple: '/assets/logos/isotipo-redondeado.png',
   },
 }
 
 export const viewport: Viewport = {
-  themeColor: '#6600ff',
+  themeColor: '#082060',
 }
 
 export default function RootLayout({

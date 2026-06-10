@@ -1,6 +1,20 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* TalentoYa brand tokens */
+:root {
+  --ty-azul-oscuro: #082060;
+  --ty-azul-principal: #0758B8;
+  --ty-azul-brillante: #075ED0;
+  --ty-turquesa: #20C8B8;
+  --ty-turquesa-profundo: #10A8B8;
+  --ty-verde-agua: #32D0B8;
+  --ty-celeste: #58B5E2;
+  --ty-blanco: #FFFFFF;
+  --ty-gris-claro: #E8F0F8;
+  --ty-azul-negro: #061C4A;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -129,9 +143,17 @@
 }
 
 .hero-gradient {
-  background: linear-gradient(160deg, #ffffff 0%, #f8f5ff 50%, #f0ebff 100%);
+  background: linear-gradient(160deg, #ffffff 0%, #f0f6ff 50%, #e8f4fb 100%);
   position: relative;
   overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 .calendly-inline-widget {

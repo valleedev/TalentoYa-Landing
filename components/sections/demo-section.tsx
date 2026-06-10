@@ -53,8 +53,8 @@ function ContactForm() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4 }}
       >
-        <div className="w-16 h-16 bg-violet-100 rounded-full flex items-center justify-center">
-          <CheckCircle className="h-8 w-8 text-[#6600ff]" />
+        <div className="w-16 h-16 bg-[#E8F0F8] rounded-full flex items-center justify-center">
+          <CheckCircle className="h-8 w-8 text-[#0758B8]" />
         </div>
         <p className="text-gray-700 font-medium max-w-xs">{demoSection.successMessage}</p>
       </motion.div>
@@ -106,7 +106,7 @@ function ContactForm() {
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#6600ff] hover:bg-[#5500d4] text-white font-semibold py-3 text-base"
+        className="w-full bg-[#0758B8] hover:bg-[#082060] text-white font-semibold py-3 text-base"
       >
         Agendar mi demo
       </Button>
@@ -145,10 +145,21 @@ export function DemoSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-balance">
+          <div className="flex justify-center mb-4">
+            <img
+              src="/assets/talen/talen-calendario.png"
+              alt="Talen con calendario"
+              className="w-20 h-20 object-contain"
+              width={80}
+              height={80}
+              loading="lazy"
+              aria-hidden="true"
+            />
+          </div>
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#061C4A] text-balance">
             {demoSection.heading}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
+          <p className="text-xl text-[#061C4A]/60 max-w-2xl mx-auto text-pretty">
             {demoSection.subheading}
           </p>
         </motion.div>
@@ -177,8 +188,8 @@ export function DemoSection() {
                       transition={{ duration: 0.4, delay: i * 0.1 }}
                       viewport={{ once: true }}
                     >
-                      <div className="w-10 h-10 bg-violet-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Icon className="h-5 w-5 text-[#6600ff]" />
+                      <div className="w-10 h-10 bg-[#E8F0F8] rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Icon className="h-5 w-5 text-[#0758B8]" />
                       </div>
                       <span className="text-gray-700 font-medium leading-relaxed pt-2">
                         {bullet.text}
@@ -189,7 +200,7 @@ export function DemoSection() {
               </ul>
             </div>
 
-            <div className="bg-violet-50 border border-violet-100 rounded-xl p-6">
+            <div className="bg-[#E8F0F8] border border-[#58B5E2]/30 rounded-xl p-6">
               <blockquote className="text-gray-700 italic leading-relaxed mb-4">
                 &ldquo;Antes me tomaba todo un día hacer la nómina de mis 8 empleados. Ahora con
                 TalentoYa lo hago en 30 minutos y sin errores.&rdquo;

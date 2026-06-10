@@ -4,30 +4,30 @@ import { motion } from "framer-motion"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { benefits, type ColorKey } from "@/lib/data"
 
-const colorMap: Record<ColorKey, { bg: string; icon: string; title: string; border: string }> = {
+const colorMap: Record<ColorKey, { bg: string; iconColor: string; title: string; borderHover: string }> = {
   blue: {
-    bg: "bg-violet-100",
-    icon: "text-violet-600",
-    title: "text-violet-900",
-    border: "hover:border-violet-200",
+    bg: "bg-[#E8F0F8]",
+    iconColor: "#0758B8",
+    title: "text-[#082060]",
+    borderHover: "hover:border-[#58B5E2]",
   },
   green: {
-    bg: "bg-green-100",
-    icon: "text-green-600",
-    title: "text-green-900",
-    border: "hover:border-green-200",
+    bg: "bg-[#E0F8F6]",
+    iconColor: "#10A8B8",
+    title: "text-[#082060]",
+    borderHover: "hover:border-[#20C8B8]",
   },
   purple: {
-    bg: "bg-purple-100",
-    icon: "text-purple-600",
-    title: "text-purple-900",
-    border: "hover:border-purple-200",
+    bg: "bg-[#EAF2FB]",
+    iconColor: "#075ED0",
+    title: "text-[#082060]",
+    borderHover: "hover:border-[#58B5E2]",
   },
   orange: {
-    bg: "bg-orange-100",
-    icon: "text-orange-600",
-    title: "text-orange-900",
-    border: "hover:border-orange-200",
+    bg: "bg-[#E4FBF8]",
+    iconColor: "#20C8B8",
+    title: "text-[#082060]",
+    borderHover: "hover:border-[#32D0B8]",
   },
 }
 
@@ -76,18 +76,18 @@ export function BenefitsSection() {
                 viewport={{ once: true }}
               >
                 <Card
-                  className={`text-center hover:shadow-xl transition-all duration-300 border-2 ${colors.border}`}
+                  className={`text-center hover:shadow-xl transition-all duration-300 border-2 border-transparent ${colors.borderHover}`}
                 >
                   <CardHeader>
                     <div
                       className={`mx-auto w-16 h-16 ${colors.bg} rounded-xl flex items-center justify-center mb-4`}
                     >
-                      <Icon className={`h-8 w-8 ${colors.icon}`} />
+                      <Icon className="h-8 w-8" style={{ color: colors.iconColor }} />
                     </div>
                     <CardTitle className={`text-xl font-bold ${colors.title}`}>
                       {benefit.title}
                     </CardTitle>
-                    <CardDescription className="text-gray-600 font-medium">
+                    <CardDescription className="text-[#061C4A]/70 font-medium">
                       {benefit.description}
                     </CardDescription>
                   </CardHeader>

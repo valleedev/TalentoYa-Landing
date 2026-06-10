@@ -133,12 +133,12 @@ export function PricingSection() {
             >
               <Card
                 className={`relative p-6 h-full hover:shadow-xl transition-all duration-300 ${
-                  plan.highlighted ? "border-2 border-blue-500" : ""
+                  plan.highlighted ? "border-2 border-[#0758B8]" : ""
                 }`}
               >
                 {plan.badge && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-[#0758B8] text-white px-4 py-1 rounded-full text-sm font-medium">
                       {plan.badge}
                     </span>
                   </div>
@@ -146,7 +146,7 @@ export function PricingSection() {
                 <CardHeader className="text-center pb-8">
                   <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
                   <div className="space-y-2">
-                    <div className="text-4xl font-bold text-blue-600">{plan.price}</div>
+                    <div className="text-4xl font-bold text-[#0758B8]">{plan.price}</div>
                     <div className="text-gray-500">{plan.period}</div>
                   </div>
                   <CardDescription className="text-lg">{plan.description}</CardDescription>
@@ -155,7 +155,7 @@ export function PricingSection() {
                   <div className="space-y-3">
                     {plan.features.map((feature) => (
                       <div key={feature} className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
+                        <CheckCircle className="h-5 w-5 text-[#10A8B8]" />
                         <span>{feature}</span>
                       </div>
                     ))}

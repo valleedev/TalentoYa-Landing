@@ -13,14 +13,34 @@ const ctaBenefits = [
 export function CtaSection() {
   return (
     <motion.section
-      id="demo"
-      className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+      id="cta"
+      className="py-20 px-4 text-white"
+      style={{ background: "linear-gradient(135deg, #082060 0%, #0758B8 60%, #075ED0 100%)" }}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true, margin: "-100px" }}
     >
-      <div className="container mx-auto max-w-4xl text-center">
+      <div className="container mx-auto max-w-5xl text-center">
+        {/* Talen celebrando */}
+        <motion.div
+          className="flex justify-center mb-6"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <img
+            src="/assets/talen/talen-celebrando.png"
+            alt="Talen celebrando"
+            className="w-24 h-24 md:w-32 md:h-32 object-contain drop-shadow-lg"
+            width={128}
+            height={128}
+            loading="lazy"
+            aria-hidden="true"
+          />
+        </motion.div>
+
         <motion.div
           className="space-y-10"
           initial={{ opacity: 0, y: 30 }}
@@ -64,7 +84,7 @@ export function CtaSection() {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
               <div className="space-y-6">
                 <div className="text-center space-y-3">
-                  <Zap className="h-12 w-12 text-yellow-300 mx-auto" />
+                  <Zap className="h-12 w-12 mx-auto" style={{ color: "#20C8B8" }} />
                   <h3 className="text-2xl font-bold text-white">
                     Solicita tu demo personalizada
                   </h3>
