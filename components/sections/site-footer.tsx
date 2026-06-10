@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Instagram, Mail } from "lucide-react"
+import { Instagram } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import { footerQuickLinks } from "@/lib/data"
 
@@ -87,8 +87,7 @@ export function SiteFooter() {
           >
             <h3 className="font-bold text-lg text-white">Contacto</h3>
             <div className="space-y-3">
-              <div className="flex items-center gap-3 text-gray-300">
-                <Mail className="h-5 w-5 text-[#20C8B8]" />
+              <div className="text-gray-300">
                 <a
                   href="mailto:info.talentoya@gmail.com"
                   className="hover:text-white transition-colors"

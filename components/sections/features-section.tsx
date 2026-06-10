@@ -90,11 +90,13 @@ export function FeaturesSection() {
                 viewport={{ once: true }}
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div
-                    className={`w-12 h-12 ${colors.bg} rounded-xl flex items-center justify-center flex-shrink-0`}
-                  >
-                    <Icon className="h-6 w-6" style={{ color: colors.iconColor }} />
-                  </div>
+                  {!talen && (
+                    <div
+                      className={`w-12 h-12 ${colors.bg} rounded-xl flex items-center justify-center flex-shrink-0`}
+                    >
+                      <Icon className="h-6 w-6" style={{ color: colors.iconColor }} />
+                    </div>
+                  )}
                   {talen && (
                     <img
                       src={talen.src}

@@ -61,12 +61,6 @@ export function Header() {
           >
             <a href="/login">Iniciar sesión</a>
           </Button>
-          <Button
-            className="bg-[#0758B8] hover:bg-[#082060] text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0758B8]"
-            asChild
-          >
-            <a href="#demo">Agenda tu demo</a>
-          </Button>
         </nav>
 
         {/* Mobile menu button */}
@@ -81,52 +75,43 @@ export function Header() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — full screen overlay */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             id="mobile-menu"
             role="dialog"
             aria-label="Menú de navegación"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="md:hidden border-t border-[#E8F0F8] bg-white overflow-hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            className="md:hidden fixed inset-x-0 top-16 bottom-0 bg-white overflow-y-auto border-t border-[#E8F0F8] z-50"
           >
-            <nav className="container mx-auto px-4 py-4 flex flex-col gap-1 max-w-6xl">
+            <nav className="w-full px-6 py-6 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={closeMobile}
-                  className="py-3 px-2 text-[#061C4A] hover:text-[#0758B8] hover:bg-[#E8F0F8] rounded-lg transition-colors text-base font-medium focus-visible:outline-2 focus-visible:outline-[#0758B8]"
+                  className="py-4 px-3 text-[#061C4A] hover:text-[#0758B8] hover:bg-[#E8F0F8] rounded-lg transition-colors text-lg font-medium focus-visible:outline-2 focus-visible:outline-[#0758B8]"
                 >
                   {link.label}
                 </a>
               ))}
-              <div className="border-t border-[#E8F0F8] my-2" />
+              <div className="border-t border-[#E8F0F8] my-3" />
               <a
                 href="/login"
                 onClick={closeMobile}
-                className="py-3 px-2 text-[#061C4A] hover:text-[#0758B8] hover:bg-[#E8F0F8] rounded-lg transition-colors text-base font-medium focus-visible:outline-2 focus-visible:outline-[#0758B8]"
+                className="py-4 px-3 text-[#061C4A] hover:text-[#0758B8] hover:bg-[#E8F0F8] rounded-lg transition-colors text-lg font-medium focus-visible:outline-2 focus-visible:outline-[#0758B8]"
               >
                 Iniciar sesión
               </a>
-              <a
-                href="#demo"
-                onClick={closeMobile}
-                className="mt-1 py-3 px-4 bg-[#0758B8] hover:bg-[#082060] text-white rounded-lg text-base font-semibold text-center transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0758B8]"
-              >
-                Agenda tu demo
-              </a>
-
-              {/* Mobile logo */}
-              <div className="pt-4 pb-2 flex justify-center">
+              <div className="mt-auto pt-8 pb-4 flex justify-center">
                 <img
                   src="/assets/logos/logo-horizontal-descriptor.png"
                   alt="TalentoYa"
-                  className="h-8 w-auto opacity-60"
+                  className="h-8 w-auto opacity-40"
                   width={160}
                   height={32}
                   aria-hidden="true"

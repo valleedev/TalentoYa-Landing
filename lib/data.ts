@@ -23,7 +23,7 @@ export const navLinks: NavLink[] = [
   { href: "#inicio", label: "Inicio" },
   { href: "#beneficios", label: "Beneficios" },
   { href: "#caracteristicas", label: "Características" },
-  { href: "#demo", label: "Demo" },
+  { href: "#planes", label: "Planes" },
 ]
 
 export type ColorKey = "blue" | "green" | "purple" | "orange"
@@ -145,7 +145,7 @@ export const demoSection = {
 }
 
 export const footerQuickLinks: NavLink[] = [
-  { href: "#demo", label: "Agenda una demo" },
+  { href: "#planes", label: "Planes" },
   { href: "#caracteristicas", label: "Características" },
   { href: "#beneficios", label: "Beneficios" },
   { href: "/login", label: "Iniciar sesión" },
