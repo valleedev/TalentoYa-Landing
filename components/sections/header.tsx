@@ -88,7 +88,7 @@ export function Header() {
             className="md:hidden absolute left-0 right-0 top-full bg-white border-t border-[#E8F0F8] overflow-y-auto z-50"
             style={{ height: "calc(100vh - 64px)" }}
           >
-            <nav className="w-full px-6 py-6 flex flex-col gap-1">
+            <nav className="w-full h-full px-6 py-6 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -99,7 +99,8 @@ export function Header() {
                   {link.label}
                 </a>
               ))}
-              <div className="border-t border-[#E8F0F8] my-3" />
+              <div className="flex-1" />
+              <div className="border-t border-[#E8F0F8] mb-3" />
               <a
                 href="/login"
                 onClick={closeMobile}
@@ -107,7 +108,7 @@ export function Header() {
               >
                 Iniciar sesión
               </a>
-              <div className="mt-auto pt-8 pb-4 flex justify-center">
+              <div className="pt-8 pb-4 flex justify-center">
                 <img
                   src="/assets/logos/logo-horizontal-descriptor.png"
                   alt="TalentoYa"
