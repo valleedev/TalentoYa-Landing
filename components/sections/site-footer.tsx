@@ -124,7 +124,7 @@ export function SiteFooter() {
               Términos de Uso
             </a>
             <a
-              href="https://sebasvalle.vercel.app"
+              href="https://jsvb.dev"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#20C8B8] hover:text-[#32D0B8] transition-colors"
