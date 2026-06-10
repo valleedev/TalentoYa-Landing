@@ -52,8 +52,8 @@ export const metadata: Metadata = {
     creator: '@ValleeDev',
   },
   icons: {
-    icon: '/assets/logos/isotipo-redondeado.png',
-    apple: '/assets/logos/isotipo-redondeado.png',
+    icon: '/assets/logos/isotipo.png',
+    apple: '/assets/logos/isotipo.png',
   },
 }
 
