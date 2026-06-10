@@ -23,7 +23,7 @@ export function Header() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 z-50 relative transition-all duration-300 ${
         scrolled
           ? "border-b border-[#E8F0F8] bg-white/98 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/95"
           : "bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90"
@@ -55,8 +55,7 @@ export function Header() {
             </a>
           ))}
           <Button
-            variant="ghost"
-            className="text-[#061C4A] hover:text-[#0758B8] hover:bg-[#E8F0F8]"
+            className="border border-[#0758B8] text-[#0758B8] bg-white hover:bg-[#0758B8] hover:text-white transition-colors"
             asChild
           >
             <a href="/login">Iniciar sesión</a>
@@ -75,18 +74,19 @@ export function Header() {
         </button>
       </div>
 
-      {/* Mobile menu — full screen overlay */}
+      {/* Mobile menu — absolute below header to avoid backdrop-filter containing block */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             id="mobile-menu"
             role="dialog"
             aria-label="Menú de navegación"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="md:hidden fixed inset-x-0 top-16 bottom-0 bg-white overflow-y-auto border-t border-[#E8F0F8] z-50"
+            className="md:hidden absolute left-0 right-0 top-full bg-white border-t border-[#E8F0F8] overflow-y-auto z-50"
+            style={{ height: "calc(100vh - 64px)" }}
           >
             <nav className="w-full px-6 py-6 flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -103,7 +103,7 @@ export function Header() {
               <a
                 href="/login"
                 onClick={closeMobile}
-                className="py-4 px-3 text-[#061C4A] hover:text-[#0758B8] hover:bg-[#E8F0F8] rounded-lg transition-colors text-lg font-medium focus-visible:outline-2 focus-visible:outline-[#0758B8]"
+                className="py-4 px-4 bg-[#0758B8] hover:bg-[#082060] text-white rounded-lg transition-colors text-lg font-semibold text-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0758B8]"
               >
                 Iniciar sesión
               </a>
