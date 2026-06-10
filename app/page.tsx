@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/sections/hero-section"
 import { BenefitsSection } from "@/components/sections/benefits-section"
 import { FeaturesSection } from "@/components/sections/features-section"
 import { DemoSection } from "@/components/sections/demo-section"
+import { PricingSection } from "@/components/sections/pricing-section"
 import { SiteFooter } from "@/components/sections/site-footer"
 
 export default function TalentoYaLanding() {
@@ -12,6 +13,7 @@ export default function TalentoYaLanding() {
       <HeroSection />
       <BenefitsSection />
       <FeaturesSection />
+      <PricingSection />
       <DemoSection />
       <SiteFooter />
     </div>

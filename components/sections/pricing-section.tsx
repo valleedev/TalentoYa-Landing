@@ -1,41 +1,56 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
-import { CheckCircle, Shield } from "lucide-react"
+import { CheckCircle, Shield, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-// Archived — pricing removed from landing. Data kept inline for reference.
+import { PlanInterestModal } from "@/components/plan-interest-modal"
+
 const pricingPlans = [
   {
-    name: "Básico",
-    price: "$49.900",
+    name: "Starter",
+    price: "$150.000",
     period: "COP/mes",
-    description: "Perfecto para emprendedores",
-    features: ["Hasta 3 empleados", "Nómina básica", "Contratos básicos", "Soporte por email"],
+    description: "Para microempresas que empiezan",
+    features: ["Hasta 10 empleados", "Contratos laborales", "Documentos y permisos", "Soporte en español"],
     highlighted: false,
     badge: undefined as string | undefined,
   },
   {
     name: "PyME",
-    price: "$89.900",
+    price: "$250.000",
     period: "COP/mes",
-    description: "Ideal para pequeñas empresas",
-    features: ["Hasta 15 empleados", "Nómina completa", "Todos los contratos", "Alertas automáticas", "Soporte prioritario"],
+    description: "Ideal para empresas en crecimiento",
+    features: ["De 11 a 25 empleados", "Contratos laborales", "Documentos y permisos", "Vacaciones e incapacidades", "Soporte prioritario"],
     highlighted: true,
     badge: "Más Popular" as string | undefined,
   },
   {
-    name: "Pro",
-    price: "$149.900",
+    name: "Empresarial",
+    price: "$400.000",
     period: "COP/mes",
-    description: "Para empresas en crecimiento",
-    features: ["Empleados ilimitados", "Funciones avanzadas", "Reportes detallados", "API integración", "Soporte 24/7"],
+    description: "Para empresas consolidadas",
+    features: ["De 26 a 50 empleados", "Contratos laborales", "Documentos y permisos", "Vacaciones e incapacidades", "Reportes avanzados", "Soporte prioritario"],
     highlighted: false,
     badge: undefined as string | undefined,
   },
 ]
 
+const founderFeatures = [
+  "Hasta 15 empleados",
+  "Contratos laborales",
+  "Documentos y permisos",
+  "Vacaciones e incapacidades",
+  "Soporte en español",
+]
+
 export function PricingSection() {
+  const [modal, setModal] = useState<{ open: boolean; plan: string }>({ open: false, plan: "" })
+
+  const openModal = (plan: string) => setModal({ open: true, plan })
+  const closeModal = () => setModal({ open: false, plan: "" })
+
   return (
     <motion.section
       id="planes"
@@ -47,7 +62,7 @@ export function PricingSection() {
     >
       <div className="container mx-auto max-w-6xl">
         <motion.div
-          className="text-center space-y-4 mb-16"
+          className="text-center space-y-4 mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -59,6 +74,46 @@ export function PricingSection() {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
             Precios justos y transparentes. Sin sorpresas, sin letra pequeña.
           </p>
+        </motion.div>
+
+        {/* Plan Founder — precio de lanzamiento */}
+        <motion.div
+          className="mb-10 max-w-5xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="relative bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-400 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="absolute -top-4 left-6">
+              <span className="inline-flex items-center gap-1.5 bg-amber-400 text-amber-900 px-4 py-1 rounded-full text-sm font-bold">
+                <Star className="h-3.5 w-3.5 fill-amber-900" />
+                Precio de lanzamiento
+              </span>
+            </div>
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl font-bold text-amber-900">Plan Founder</h3>
+              <p className="text-amber-700 mt-1">Exclusivo para los primeros clientes que apoyaron TalentoYa</p>
+              <div className="flex flex-wrap gap-3 mt-3 justify-center md:justify-start">
+                {founderFeatures.map((f) => (
+                  <div key={f} className="flex items-center gap-1.5 text-sm text-amber-800">
+                    <CheckCircle className="h-4 w-4 text-amber-600 shrink-0" />
+                    <span>{f}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="text-center shrink-0">
+              <div className="text-4xl font-bold text-amber-600">$150.000</div>
+              <div className="text-amber-700 text-sm">COP/mes</div>
+              <Button
+                className="mt-4 bg-amber-500 hover:bg-amber-600 text-white border-0"
+                onClick={() => openModal("Founder")}
+              >
+                Empieza ahora
+              </Button>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
@@ -108,6 +163,7 @@ export function PricingSection() {
                   <Button
                     className="w-full mt-6"
                     variant={plan.highlighted ? "default" : "outline"}
+                    onClick={() => openModal(plan.name)}
                   >
                     Empieza ahora
                   </Button>
@@ -127,11 +183,17 @@ export function PricingSection() {
           <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-6 py-3 rounded-full">
             <Shield className="h-5 w-5" />
             <span className="font-medium">
-              Garantía de 30 días - Si no estás satisfecho, te devolvemos el dinero
+              Garantía de 30 días — Si no estás satisfecho, te devolvemos el dinero
             </span>
           </div>
         </motion.div>
       </div>
+
+      <PlanInterestModal
+        open={modal.open}
+        planName={modal.plan}
+        onClose={closeModal}
+      />
     </motion.section>
   )
 }

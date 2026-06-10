@@ -77,7 +77,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 1.2 }}
             >
               <CheckCircle className="h-4 w-4 text-green-500" />
-              <span>Sin tarjeta de crédito  •  Soporte en español  •  Cumple ley laboral colombiana</span>
+              <span>Soporte en español</span>
             </motion.div>
           </motion.div>
 
@@ -90,7 +90,7 @@ export function HeroSection() {
             <img
               src="/dashboard-preview.png"
               alt="Dashboard de TalentoYa — gestión de empleados"
-              className="max-w-lg w-full h-auto rounded-xl shadow-2xl border border-gray-200"
+              className="max-w-4xl w-full h-auto rounded-xl shadow-2xl border border-gray-200"
             />
           </motion.div>
         </div>
