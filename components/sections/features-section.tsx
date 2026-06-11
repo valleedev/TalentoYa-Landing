@@ -36,9 +36,17 @@ const talenByFeatureIndex: Record<number, { src: string; alt: string }> = {
     src: "/assets/talen/talen-expediente.png",
     alt: "Talen con carpeta — expediente digital",
   },
+  1: {
+    src: "/assets/talen/talen-completado.png",
+    alt: "Talen con carpeta — documentos digitales",
+  },
   2: {
     src: "/assets/talen/talen-completado.png",
     alt: "Talen con checkmark — certificados listos",
+  },
+  3: {
+    src: "/assets/talen/talen-expediente.png",
+    alt: "Talen con checkmark — nómina lista",
   },
 }
 
