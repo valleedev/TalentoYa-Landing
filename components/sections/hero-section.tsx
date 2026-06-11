@@ -91,9 +91,9 @@ export function HeroSection() {
                 className="bg-[#0758B8] hover:bg-[#082060] text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-base focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0758B8]"
                 asChild
               >
-                <a href="#demo">
+                <a href="#planes">
                   <Zap className="h-5 w-5 mr-2" />
-                  Agenda tu demo gratis
+                  Ver planes disponibles
                 </a>
               </Button>
             </motion.div>
