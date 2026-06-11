@@ -60,6 +60,12 @@ export function Header() {
           >
             <a href="/login">Iniciar sesión</a>
           </Button>
+          <Button
+            className="bg-[#0758B8] hover:bg-[#082060] text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0758B8]"
+            asChild
+          >
+            <a href="#planes">Ver planes</a>
+          </Button>
         </nav>
 
         {/* Mobile menu button */}
