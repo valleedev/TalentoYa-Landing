@@ -127,7 +127,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <motion.img
-              src="/assets/talen/talen-hero.png"
+              src="/assets/talen/talen-empleado.png"
               alt="Talen, la mascota de TalentoYa — colibrí corporativo"
               className="w-56 sm:w-72 md:w-80 lg:w-96 h-auto drop-shadow-xl"
               width={384}
