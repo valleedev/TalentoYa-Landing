@@ -20,10 +20,10 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#beneficios", label: "Beneficios" },
-  { href: "#caracteristicas", label: "Características" },
-  { href: "#planes", label: "Planes" },
+  { href: "/#inicio", label: "Inicio" },
+  { href: "/#beneficios", label: "Beneficios" },
+  { href: "/#caracteristicas", label: "Características" },
+  { href: "/#planes", label: "Planes" },
 ]
 
 export type ColorKey = "blue" | "green" | "purple" | "orange"
@@ -145,8 +145,8 @@ export const demoSection = {
 }
 
 export const footerQuickLinks: NavLink[] = [
-  { href: "#planes", label: "Planes" },
-  { href: "#caracteristicas", label: "Características" },
-  { href: "#beneficios", label: "Beneficios" },
+  { href: "/#planes", label: "Planes" },
+  { href: "/#caracteristicas", label: "Características" },
+  { href: "/#beneficios", label: "Beneficios" },
   { href: "/login", label: "Iniciar sesión" },
 ]

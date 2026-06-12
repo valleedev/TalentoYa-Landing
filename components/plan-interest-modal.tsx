@@ -6,6 +6,7 @@ import { X, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { saveLead } from "@/lib/actions/saveLead"
+import { privacyPath } from "@/lib/legal"
 
 interface PlanInterestModalProps {
   open: boolean
@@ -60,7 +61,8 @@ export function PlanInterestModal({ open, planName, onClose }: PlanInterestModal
           >
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0758B8] transition-colors"
+              aria-label="Cerrar formulario"
             >
               <X className="h-5 w-5" />
             </button>
@@ -128,6 +130,17 @@ export function PlanInterestModal({ open, planName, onClose }: PlanInterestModal
                   >
                     {status === "loading" ? "Enviando..." : "Enviar solicitud"}
                   </Button>
+                  <p className="text-center text-xs leading-5 text-gray-500">
+                    Al enviar este formulario, trataremos tus datos para responder la solicitud.
+                    Consulta la{" "}
+                    <a
+                      href={privacyPath}
+                      className="font-medium text-[#0758B8] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0758B8]"
+                    >
+                      Política de privacidad
+                    </a>
+                    .
+                  </p>
                 </form>
               </>
             )}

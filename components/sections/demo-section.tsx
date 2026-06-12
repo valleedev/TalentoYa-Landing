@@ -12,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { demoSection } from "@/lib/data"
 import { CALENDLY_URL, DEMO_EMAIL } from "@/lib/constants"
+import { privacyPath } from "@/lib/legal"
 
 const SHOW_CALENDLY = Boolean(CALENDLY_URL)
 
@@ -112,7 +113,13 @@ function ContactForm() {
       </Button>
 
       <p className="text-xs text-gray-400 text-center">
-        Sin compromiso • Te respondemos en menos de 2 horas
+        Sin compromiso • Te respondemos en menos de 2 horas. Consulta la{" "}
+        <a
+          href={privacyPath}
+          className="font-medium text-[#0758B8] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0758B8]"
+        >
+          Política de privacidad
+        </a>
       </p>
     </form>
   )

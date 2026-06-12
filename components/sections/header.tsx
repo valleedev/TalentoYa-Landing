@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -20,8 +21,7 @@ export function Header() {
 
   return (
     <motion.header
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={false}
       transition={{ duration: 0.6 }}
       className={`sticky top-0 z-50 relative transition-all duration-300 ${
         scrolled
@@ -30,7 +30,7 @@ export function Header() {
       }`}
     >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between max-w-6xl">
-        <a href="#inicio" aria-label="TalentoYa — Inicio">
+        <Link href="/" aria-label="TalentoYa — Inicio">
           <img
             src="/assets/logos/logo-horizontal-descriptor.png"
             alt="TalentoYa — Gestión de Talento Humano"
@@ -38,7 +38,7 @@ export function Header() {
             width={200}
             height={40}
           />
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav

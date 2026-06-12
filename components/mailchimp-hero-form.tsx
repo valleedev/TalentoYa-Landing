@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Download, Gift, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { privacyPath } from "@/lib/legal"
 // Archived — re-wire via constants.ts if reactivating
 const MAILCHIMP_URL =
   "https://gmail.us1.list-manage.com/subscribe/post-json?u=e1b6a1652a46e8bdbb9526208&id=974291b7f1&c=?"
@@ -160,11 +161,21 @@ export function MailchimpHeroForm({ variant = "hero", showTitle = true }: Mailch
       )}
 
       <p
-        className={`text-xs text-center ${
+        className={`text-xs text-center leading-5 ${
           variant === "hero" ? "text-white/60" : "text-gray-500"
         }`}
       >
-        {config.footerText}
+        {config.footerText}. Consulta la{" "}
+        <a
+          href={privacyPath}
+          className={`font-medium underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 ${
+            variant === "hero"
+              ? "text-white focus-visible:outline-white"
+              : "text-[#0758B8] focus-visible:outline-[#0758B8]"
+          }`}
+        >
+          Política de privacidad
+        </a>
       </p>
     </motion.div>
   )

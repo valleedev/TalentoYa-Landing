@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { CheckCircle, Clock, Zap } from "lucide-react"
 import { MailchimpHeroForm } from "@/components/mailchimp-hero-form"
+import { privacyPath } from "@/lib/legal"
 
 const ctaBenefits = [
   "Configuración en 5 minutos",
@@ -95,8 +96,16 @@ export function CtaSection() {
 
                 <MailchimpHeroForm variant="cta" showTitle={false} />
 
-                <div className="text-center text-white/70 text-xs">
-                  Al solicitar tu demo aceptas que te contactemos para agendar una presentación personalizada
+                <div className="text-center text-white/70 text-xs leading-5">
+                  Al solicitar tu demo aceptas que te contactemos para agendar una presentación
+                  personalizada y puedes consultar nuestra{" "}
+                  <a
+                    href={privacyPath}
+                    className="font-medium text-white underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  >
+                    Política de privacidad
+                  </a>
+                  .
                 </div>
               </div>
             </div>

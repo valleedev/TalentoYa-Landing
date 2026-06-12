@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Instagram } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import { footerQuickLinks } from "@/lib/data"
+import { privacyPath } from "@/lib/legal"
 
 export function SiteFooter() {
   return (
@@ -116,11 +117,17 @@ export function SiteFooter() {
           <div className="text-gray-400 text-sm">
             © 2025 TalentoYa. Todos los derechos reservados.
           </div>
-          <div className="flex items-center gap-6 text-sm">
-            <a href="/privacidad" className="text-gray-400 hover:text-white transition-colors">
-              Política de Privacidad
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm md:justify-end">
+            <a
+              href={privacyPath}
+              className="text-gray-400 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#20C8B8] transition-colors"
+            >
+              Política de privacidad
             </a>
-            <a href="/terminos" className="text-gray-400 hover:text-white transition-colors">
+            <a
+              href="/terminos"
+              className="text-gray-400 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#20C8B8] transition-colors"
+            >
               Términos de Uso
             </a>
             <a
