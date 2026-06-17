@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Instagram } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import { footerQuickLinks } from "@/lib/data"
 import { privacyPath } from "@/lib/legal"
@@ -42,20 +41,6 @@ export function SiteFooter() {
               La plataforma de gestión de talento humano más simple y económica para empresarios
               colombianos. Simplifica tu nómina, cumple la ley y enfócate en hacer crecer tu negocio.
             </p>
-            <div className="flex gap-4 pt-4">
-              <a
-                href="https://www.instagram.com/talento.ya/"
-                className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors"
-                style={{ backgroundColor: "#082060" }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#e1306c")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#082060")}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="TalentoYa en Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-            </div>
           </motion.div>
 
           <motion.div
@@ -115,7 +100,7 @@ export function SiteFooter() {
           viewport={{ once: true }}
         >
           <div className="text-gray-400 text-sm">
-            © 2025 TalentoYa. Todos los derechos reservados.
+            © 2026 TalentoYa. Todos los derechos reservados.
           </div>
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm md:justify-end">
             <a
