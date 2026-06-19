@@ -57,13 +57,28 @@ export function HeroSection() {
               </motion.div>
 
               <motion.h1
-                className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#061C4A] leading-tight"
+                className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight"
+                style={{
+                  textShadow:
+                    "0 1px 0 rgba(255,255,255,0.12), 0 2px 0 rgba(6,28,74,0.4), 0 3px 0 rgba(6,28,74,0.28), 0 4px 0 rgba(6,28,74,0.16), 0 7px 12px rgba(0,0,0,0.22)",
+                  background: "linear-gradient(to bottom, #1e3f7a 0%, #061C4A 55%, #040e2e 100%)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
                 Gestiona tu equipo{" "}
-                <span style={{ color: "var(--ty-azul-principal)" }}>
+                <span
+                  style={{
+                    background: "linear-gradient(to bottom, #4aa5f5 0%, #0a6fd4 40%, #0758B8 70%, #054da8 100%)",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
                   con orden y claridad
                 </span>
               </motion.h1>
@@ -88,7 +103,32 @@ export function HeroSection() {
             >
               <Button
                 size="lg"
-                className="bg-[#0758B8] hover:bg-[#082060] text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-base focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0758B8]"
+                className="relative text-white font-bold py-4 px-8 rounded-2xl text-base transition-all duration-150 active:translate-y-[3px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0758B8] border-0"
+                style={{
+                  background: "linear-gradient(to bottom, #3a9af0 0%, #0a6fd4 35%, #0758B8 65%, #054da8 100%)",
+                  boxShadow:
+                    "0 2px 1px rgba(255,255,255,0.45) inset, 0 -1px 1px rgba(0,0,0,0.25) inset, 0 6px 0 #033d7d, 0 9px 22px rgba(3,29,80,0.45)",
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.boxShadow =
+                    "0 2px 1px rgba(255,255,255,0.55) inset, 0 -1px 1px rgba(0,0,0,0.2) inset, 0 6px 0 #033d7d, 0 12px 28px rgba(3,29,80,0.55)";
+                  (e.currentTarget as HTMLElement).style.background =
+                    "linear-gradient(to bottom, #4aa5f5 0%, #1278dd 35%, #0864c8 65%, #0558b8 100%)";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.boxShadow =
+                    "0 2px 1px rgba(255,255,255,0.45) inset, 0 -1px 1px rgba(0,0,0,0.25) inset, 0 6px 0 #033d7d, 0 9px 22px rgba(3,29,80,0.45)";
+                  (e.currentTarget as HTMLElement).style.background =
+                    "linear-gradient(to bottom, #3a9af0 0%, #0a6fd4 35%, #0758B8 65%, #054da8 100%)";
+                }}
+                onMouseDown={e => {
+                  (e.currentTarget as HTMLElement).style.boxShadow =
+                    "0 1px 1px rgba(255,255,255,0.3) inset, 0 -1px 1px rgba(0,0,0,0.3) inset, 0 3px 0 #033d7d, 0 5px 12px rgba(3,29,80,0.35)";
+                }}
+                onMouseUp={e => {
+                  (e.currentTarget as HTMLElement).style.boxShadow =
+                    "0 2px 1px rgba(255,255,255,0.45) inset, 0 -1px 1px rgba(0,0,0,0.25) inset, 0 6px 0 #033d7d, 0 9px 22px rgba(3,29,80,0.45)";
+                }}
                 asChild
               >
                 <a href="#planes">

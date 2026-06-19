@@ -1,14 +1,10 @@
 import type { LucideIcon } from "lucide-react"
 import {
-  Archive,
-  Award,
   Calculator,
   Calendar,
   CheckCircle,
   FileCheck,
   FileText,
-  FolderOpen,
-  Shield,
   User,
   Users,
   Zap,
@@ -29,7 +25,7 @@ export const navLinks: NavLink[] = [
 export type ColorKey = "blue" | "green" | "purple" | "orange"
 
 export interface Benefit {
-  icon: LucideIcon
+  icon: string
   color: ColorKey
   title: string
   description: string
@@ -37,28 +33,28 @@ export interface Benefit {
 
 export const benefits: Benefit[] = [
   {
-    icon: FolderOpen,
+    icon: "/assets/icons/benefits/expediente-digital.png",
     color: "blue",
     title: "Expediente digital completo",
     description:
       "Toda la información de cada empleado centralizada: datos personales, documentos, historial y contratos en un perfil organizado.",
   },
   {
-    icon: Shield,
+    icon: "/assets/icons/benefits/contratos-legales.png",
     color: "green",
     title: "Contratos 100% legales",
     description:
       "Genera contratos que cumplen con el Código Sustantivo del Trabajo. Término fijo, indefinido, obra o labor — sin plantillas genéricas.",
   },
   {
-    icon: Award,
+    icon: "/assets/icons/benefits/certificados.png",
     color: "purple",
     title: "Certificados en segundos",
     description:
       "Certificados laborales, de ingresos y retenciones con un clic. Formato correcto, datos precisos, sin demoras.",
   },
   {
-    icon: Archive,
+    icon: "/assets/icons/benefits/historial-laboral.png",
     color: "orange",
     title: "Historial laboral completo",
     description:
