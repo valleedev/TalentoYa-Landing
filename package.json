@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
+    "dev": "next dev --port 3000",
     "lint": "next lint",
     "smoke": "node scripts/smoke.mjs",
     "start": "next start"
