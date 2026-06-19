@@ -11,10 +11,8 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { demoSection } from "@/lib/data"
-import { CALENDLY_URL, DEMO_EMAIL } from "@/lib/constants"
+import { DEMO_EMAIL } from "@/lib/constants"
 import { privacyPath } from "@/lib/legal"
-
-const SHOW_CALENDLY = Boolean(CALENDLY_URL)
 
 const schema = z.object({
   nombre: z.string().min(2, "Ingresa tu nombre"),
@@ -125,15 +123,6 @@ function ContactForm() {
   )
 }
 
-function CalendlyWidget() {
-  return (
-    <div
-      className="calendly-inline-widget w-full"
-      data-url={CALENDLY_URL}
-    />
-  )
-}
-
 export function DemoSection() {
   return (
     <motion.section
@@ -237,7 +226,7 @@ export function DemoSection() {
                 <h3 className="text-lg font-bold text-gray-900">{demoSection.formHeading}</h3>
                 <p className="text-sm text-gray-500 mt-1">{demoSection.formSubheading}</p>
               </div>
-              {SHOW_CALENDLY ? <CalendlyWidget /> : <ContactForm />}
+              <ContactForm />
             </div>
           </motion.div>
         </div>

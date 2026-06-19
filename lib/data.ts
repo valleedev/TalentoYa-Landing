@@ -42,16 +42,16 @@ export const benefits: Benefit[] = [
   {
     icon: "/assets/icons/benefits/contratos-legales.png",
     color: "green",
-    title: "Contratos 100% legales",
+    title: "Gestión de contratos",
     description:
-      "Genera contratos que cumplen con el Código Sustantivo del Trabajo. Término fijo, indefinido, obra o labor — sin plantillas genéricas.",
+      "Almacena contratos digitales, recibe alertas de vencimiento y lleva el historial completo por empleado — sin papeles ni carpetas físicas.",
   },
   {
     icon: "/assets/icons/benefits/certificados.png",
     color: "purple",
-    title: "Certificados en segundos",
+    title: "Documentos digitales",
     description:
-      "Certificados laborales, de ingresos y retenciones con un clic. Formato correcto, datos precisos, sin demoras.",
+      "Almacena, organiza y accede a certificados laborales, contratos y soportes de nómina desde un solo lugar — sin carpetas físicas ni extravíos.",
   },
   {
     icon: "/assets/icons/benefits/historial-laboral.png",

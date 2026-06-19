@@ -105,6 +105,8 @@ export function SiteFooter() {
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm md:justify-end">
             <a
               href={privacyPath}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-400 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#20C8B8] transition-colors"
             >
               Política de privacidad

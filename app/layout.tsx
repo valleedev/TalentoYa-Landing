@@ -3,8 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import './globals.css'
-import { Analytics } from "@vercel/analytics/next"
-import Script from "next/script"
+import { ConsentManager } from "@/components/consent-manager"
 
 export const metadata: Metadata = {
   title: 'TalentoYa | Gestión de talento humano y nómina para microempresas',
@@ -70,11 +69,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         {children}
-        <Analytics />
-        <Script
-          src="https://assets.calendly.com/assets/external/widget.js"
-          strategy="lazyOnload"
-        />
+        <ConsentManager />
       </body>
     </html>
   )

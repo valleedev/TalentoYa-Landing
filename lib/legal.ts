@@ -15,7 +15,7 @@ export const legalConfig = {
   phone: pending("TELEFONO"),
   websiteUrl: "https://talentoya.vercel.app",
   effectiveDate: "2026-06-10",
-  lastUpdatedDate: "2026-06-10",
+  lastUpdatedDate: "2026-06-18",
 } as const
 
 export const detectedProviders = [
@@ -37,11 +37,6 @@ export const detectedProviders = [
     context: "Detectado por metadataBase, dominio de despliegue y @vercel/analytics.",
   },
   {
-    name: "Calendly",
-    function: "agenda externa de demostraciones comerciales",
-    context: "Detectado por script embebido y URL publica de agenda en la landing.",
-  },
-  {
     name: "Mailchimp",
     function: "captura de correos en formularios de descarga o demo cuando esos componentes esten activos",
     context:
@@ -50,7 +45,6 @@ export const detectedProviders = [
 ] as const
 
 export const tableOfContents = [
-  { id: "identificacion", label: "Identificacion" },
   { id: "alcance", label: "Alcance" },
   { id: "definiciones", label: "Definiciones" },
   { id: "datos", label: "Datos tratados" },
@@ -171,8 +165,8 @@ export const dataCategories = [
   {
     title: "Cookies, analitica y herramientas externas",
     items: [
-      "Vercel Analytics puede recolectar informacion agregada o tecnica sobre visitas y uso.",
-      "Calendly y Mailchimp pueden tratar datos cuando el usuario interactua con sus formularios o widgets externos.",
+      "Vercel Analytics puede recolectar informacion agregada o tecnica sobre visitas y uso, solo si el visitante acepta cookies no esenciales.",
+      "Mailchimp puede tratar datos cuando el usuario envia un formulario de suscripcion o descarga.",
     ],
   },
 ] as const

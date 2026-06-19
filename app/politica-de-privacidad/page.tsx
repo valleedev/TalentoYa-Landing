@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import { Header } from "@/components/sections/header"
 import { SiteFooter } from "@/components/sections/site-footer"
 import { PrivacyPolicyContent } from "@/components/legal/privacy-policy-content"
 import { legalConfig, privacyPath } from "@/lib/legal"
@@ -32,7 +31,6 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
       <PrivacyPolicyContent />
       <SiteFooter />
     </div>

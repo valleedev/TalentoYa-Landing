@@ -111,6 +111,16 @@ export function PrivacyPolicyContent() {
           aria-label="Indice de la politica de privacidad"
           className="lg:sticky lg:top-24 lg:self-start"
         >
+          <Button
+            variant="outline"
+            className="mb-8 w-full border-[#0758B8]/30 text-[#0758B8] hover:bg-[#E8F0F8] hover:text-[#061C4A] focus-visible:ring-[#0758B8]/40"
+            asChild
+          >
+            <Link href="/">
+              <ArrowLeft className="h-4 w-4" />
+              Volver al inicio
+            </Link>
+          </Button>
           <div className="rounded-lg border border-[#E8F0F8] bg-[#F7FBFF] p-4">
             <h2 className="mb-3 text-sm font-bold uppercase tracking-wide text-[#061C4A]">
               Contenido
@@ -131,38 +141,7 @@ export function PrivacyPolicyContent() {
         </nav>
 
         <article className="min-w-0 space-y-12">
-          <Section id="identificacion" title="1. Identificacion del responsable">
-            <p>
-              Cuando TalentoYa actue como responsable del tratamiento, los datos de identificacion
-              deberan completarse con la informacion legal vigente del responsable. Mientras estos
-              datos no esten definidos, se muestran placeholders visibles para evitar publicar
-              informacion no confirmada.
-            </p>
-            <dl className="grid gap-3 rounded-lg border border-[#E8F0F8] bg-[#F7FBFF] p-5 sm:grid-cols-2">
-              {[
-                ["Razon social o nombre", legalConfig.legalName],
-                ["Nombre comercial", legalConfig.tradeName],
-                ["NIT o documento", legalConfig.identificationNumber],
-                ["Domicilio", `${legalConfig.city}, ${legalConfig.country}`],
-                ["Direccion", legalConfig.address],
-                ["Correo de proteccion de datos", legalConfig.privacyEmail],
-                ["Correo de soporte", legalConfig.supportEmail],
-                ["Telefono", legalConfig.phone],
-                ["Sitio web", legalConfig.websiteUrl],
-              ].map(([label, value]) => (
-                <div key={label} className="rounded-md bg-white p-3">
-                  <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                    {label}
-                  </dt>
-                  <dd className="mt-1 text-sm">
-                    <PlaceholderValue value={value} />
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </Section>
-
-          <Section id="alcance" title="2. Alcance de la politica">
+          <Section id="alcance" title="1. Alcance de la politica">
             <p>
               Esta politica aplica al sitio publico, formularios comerciales y plataforma TalentoYa,
               asi como al tratamiento de datos personales realizado por TalentoYa segun corresponda.
@@ -330,18 +309,25 @@ export function PrivacyPolicyContent() {
               La aplicacion puede utilizar cookies o tecnologias similares necesarias para operar
               sesiones, autenticacion, redirecciones, seleccion de empresa activa y seguridad. Estas
               tecnologias son necesarias para prestar el servicio y controlar acceso a areas
-              privadas.
+              privadas; no requieren consentimiento previo porque son imprescindibles para el
+              funcionamiento de la plataforma.
             </p>
             <p>
-              Tambien se detecto Vercel Analytics en el proyecto, que puede recopilar metricas
-              tecnicas o agregadas de navegacion. La landing carga Calendly como widget externo, y
-              algunos formularios usan un endpoint de Mailchimp cuando esos componentes estan
-              activos.
+              El sitio publico utiliza Vercel Analytics para recopilar metricas tecnicas o agregadas
+              de navegacion (por ejemplo, paginas visitadas, dispositivo y pais de manera anonima).
+              Esta tecnologia no es esencial para el servicio y solo se activa cuando el visitante
+              acepta el uso de cookies no esenciales a traves del aviso de preferencias mostrado en
+              la landing. Si el visitante elige solo esenciales, Vercel Analytics no se carga.
             </p>
-            <p className="rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
-              TODO tecnico: si se mantienen cookies o tecnologias no esenciales de analitica,
-              agenda, marketing o proveedores externos, implementar un mecanismo de informacion y
-              consentimiento/preferencias cuando sea requerido por la normativa aplicable.
+            <p>
+              Algunos formularios del sitio publico envian datos directamente a Mailchimp para
+              gestionar suscripciones o entregas de contenido cuando el usuario los completa y envia
+              de forma voluntaria. El envio ocurre unicamente por accion activa del usuario.
+            </p>
+            <p>
+              El visitante puede cambiar sus preferencias en cualquier momento eliminando el dato
+              almacenado localmente en su navegador (clave: <code>talentoya_cookie_consent</code>)
+              o usando las opciones de limpieza de datos del navegador.
             </p>
           </Section>
 
@@ -384,11 +370,8 @@ export function PrivacyPolicyContent() {
                   </h3>
                   <p className="text-slate-700">
                     Para consultas, reclamos o solicitudes relacionadas con datos personales, usa el
-                    correo indicado abajo. Si el dato esta administrado por una empresa cliente,
+                    correo de soporte. Si el dato esta administrado por una empresa cliente,
                     TalentoYa podra orientar la solicitud o remitirla al cliente cuando corresponda.
-                  </p>
-                  <p className="text-sm font-semibold">
-                    Correo: <PlaceholderValue value={legalConfig.privacyEmail} />
                   </p>
                   <p className="text-sm">
                     Soporte:{" "}
