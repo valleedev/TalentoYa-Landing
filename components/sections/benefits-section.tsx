@@ -1,33 +1,25 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardDescription, CardTitle } from "@/components/ui/card"
 import { benefits, type ColorKey } from "@/lib/data"
 
-const colorMap: Record<ColorKey, { bg: string; iconColor: string; title: string; borderHover: string }> = {
+const colorMap: Record<ColorKey, { title: string; borderHover: string }> = {
   blue: {
-    bg: "bg-[#E8F0F8]",
-    iconColor: "#0758B8",
     title: "text-[#082060]",
-    borderHover: "hover:border-[#58B5E2]",
+    borderHover: "group-hover:border-[#58B5E2]",
   },
   green: {
-    bg: "bg-[#E0F8F6]",
-    iconColor: "#10A8B8",
     title: "text-[#082060]",
-    borderHover: "hover:border-[#20C8B8]",
+    borderHover: "group-hover:border-[#20C8B8]",
   },
   purple: {
-    bg: "bg-[#EAF2FB]",
-    iconColor: "#075ED0",
     title: "text-[#082060]",
-    borderHover: "hover:border-[#58B5E2]",
+    borderHover: "group-hover:border-[#58B5E2]",
   },
   orange: {
-    bg: "bg-[#E4FBF8]",
-    iconColor: "#20C8B8",
     title: "text-[#082060]",
-    borderHover: "hover:border-[#32D0B8]",
+    borderHover: "group-hover:border-[#32D0B8]",
   },
 }
 
@@ -58,7 +50,7 @@ export function BenefitsSection() {
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, staggerChildren: 0.1 }}
@@ -66,33 +58,38 @@ export function BenefitsSection() {
         >
           {benefits.map((benefit, index) => {
             const colors = colorMap[benefit.color]
-            const Icon = benefit.icon
             return (
-              <motion.div
+              <div
                 key={benefit.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: (index + 1) * 0.1 }}
-                viewport={{ once: true }}
+                className="group relative pt-[72px] transition-transform duration-300 hover:scale-105"
               >
-                <Card
-                  className={`text-center hover:shadow-xl transition-all duration-300 border-2 border-transparent ${colors.borderHover}`}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
+                  <img
+                    src={benefit.icon}
+                    alt={benefit.title}
+                    className="w-36 h-36 drop-shadow-xl"
+                  />
+                </div>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: (index + 1) * 0.1 }}
+                  viewport={{ once: true }}
                 >
-                  <CardHeader>
-                    <div
-                      className={`mx-auto w-16 h-16 ${colors.bg} rounded-xl flex items-center justify-center mb-4`}
-                    >
-                      <Icon className="h-8 w-8" style={{ color: colors.iconColor }} />
+                  <Card
+                    className={`text-center group-hover:shadow-xl transition-all duration-300 border-2 border-transparent ${colors.borderHover}`}
+                  >
+                    <div className="pt-20 px-6 pb-6 space-y-2">
+                      <CardTitle className={`text-xl font-bold ${colors.title}`}>
+                        {benefit.title}
+                      </CardTitle>
+                      <CardDescription className="text-[#061C4A]/70 font-medium">
+                        {benefit.description}
+                      </CardDescription>
                     </div>
-                    <CardTitle className={`text-xl font-bold ${colors.title}`}>
-                      {benefit.title}
-                    </CardTitle>
-                    <CardDescription className="text-[#061C4A]/70 font-medium">
-                      {benefit.description}
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </motion.div>
+                  </Card>
+                </motion.div>
+              </div>
             )
           })}
         </motion.div>
