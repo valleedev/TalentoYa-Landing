@@ -1,33 +1,20 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Card, CardDescription, CardTitle } from "@/components/ui/card"
 import { benefits, type ColorKey } from "@/lib/data"
 
-const colorMap: Record<ColorKey, { title: string; borderHover: string }> = {
-  blue: {
-    title: "text-[#082060]",
-    borderHover: "group-hover:border-[#58B5E2]",
-  },
-  green: {
-    title: "text-[#082060]",
-    borderHover: "group-hover:border-[#20C8B8]",
-  },
-  purple: {
-    title: "text-[#082060]",
-    borderHover: "group-hover:border-[#58B5E2]",
-  },
-  orange: {
-    title: "text-[#082060]",
-    borderHover: "group-hover:border-[#32D0B8]",
-  },
+const colorMap: Record<ColorKey, { title: string }> = {
+  blue: { title: "text-[#061C4A]" },
+  green: { title: "text-[#061C4A]" },
+  purple: { title: "text-[#061C4A]" },
+  orange: { title: "text-[#061C4A]" },
 }
 
 export function BenefitsSection() {
   return (
     <motion.section
       id="beneficios"
-      className="py-20 px-4 bg-background"
+      className="py-20 px-4 bg-white"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -41,10 +28,10 @@ export function BenefitsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-balance">
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#061C4A] text-balance">
             Beneficios que transformarán tu negocio
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
+          <p className="text-xl text-[#061C4A]/60 max-w-2xl mx-auto text-pretty">
             Resultados concretos desde el primer día de uso
           </p>
         </motion.div>
@@ -76,18 +63,16 @@ export function BenefitsSection() {
                   transition={{ duration: 0.6, delay: (index + 1) * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Card
-                    className={`text-center group-hover:shadow-xl transition-all duration-300 border-2 border-transparent ${colors.borderHover}`}
-                  >
+                  <div className="text-center border border-[#e2e8f0] rounded-2xl bg-white transition-shadow duration-300 group-hover:shadow-lg">
                     <div className="pt-20 px-6 pb-6 space-y-2">
-                      <CardTitle className={`text-xl font-bold ${colors.title}`}>
+                      <p className={`text-xl font-bold ${colors.title}`}>
                         {benefit.title}
-                      </CardTitle>
-                      <CardDescription className="text-[#061C4A]/70 font-medium">
+                      </p>
+                      <p className="text-[#061C4A]/70 font-medium text-sm">
                         {benefit.description}
-                      </CardDescription>
+                      </p>
                     </div>
-                  </Card>
+                  </div>
                 </motion.div>
               </div>
             )

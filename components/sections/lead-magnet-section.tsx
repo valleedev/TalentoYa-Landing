@@ -14,7 +14,7 @@ export function LeadMagnetSection() {
   return (
     <motion.section
       id="plantilla"
-      className="py-20 px-4 bg-gradient-to-br from-green-50 to-blue-50"
+      className="py-20 px-4 bg-[#f5f7fb]"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -29,33 +29,33 @@ export function LeadMagnetSection() {
           viewport={{ once: true }}
         >
           <div className="space-y-4">
-            <h2 className="text-3xl lg:text-4xl font-bold text-balance">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#061C4A] text-balance">
               Descarga gratis nuestra plantilla de liquidación laboral
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-[#061C4A]/60 max-w-2xl mx-auto">
               Plantilla en Excel que cumple 100% con la ley colombiana. Calcula automáticamente
               cesantías, intereses, prima de servicios y vacaciones.
             </p>
           </div>
 
           <motion.div
-            className="bg-white rounded-2xl p-8 shadow-lg max-w-md mx-auto"
+            className="bg-white rounded-2xl p-8 border border-[#e2e8f0] max-w-md mx-auto"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
             <div className="space-y-6">
-              <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto">
-                <Download className="h-8 w-8 text-green-600" />
+              <div className="w-16 h-16 bg-[#E8F0F8] rounded-xl flex items-center justify-center mx-auto">
+                <Download className="h-8 w-8 text-[#0758B8]" />
               </div>
 
               <div className="space-y-4">
-                <h3 className="text-xl font-bold">Plantilla de Liquidación Laboral</h3>
-                <ul className="text-left space-y-2 text-gray-600">
+                <h3 className="text-xl font-bold text-[#061C4A]">Plantilla de Liquidación Laboral</h3>
+                <ul className="text-left space-y-2 text-[#061C4A]/70">
                   {templateBenefits.map((item) => (
                     <li key={item} className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <CheckCircle className="h-4 w-4 text-[#10A8B8]" />
                       <span>{item}</span>
                     </li>
                   ))}

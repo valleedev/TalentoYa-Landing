@@ -57,28 +57,13 @@ export function HeroSection() {
               </motion.div>
 
               <motion.h1
-                className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight"
-                style={{
-                  textShadow:
-                    "0 1px 0 rgba(255,255,255,0.12), 0 2px 0 rgba(6,28,74,0.4), 0 3px 0 rgba(6,28,74,0.28), 0 4px 0 rgba(6,28,74,0.16), 0 7px 12px rgba(0,0,0,0.22)",
-                  background: "linear-gradient(to bottom, #1e3f7a 0%, #061C4A 55%, #040e2e 100%)",
-                  WebkitBackgroundClip: "text",
-                  backgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
+                className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#061C4A]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
                 Gestiona tu equipo{" "}
-                <span
-                  style={{
-                    background: "linear-gradient(to bottom, #4aa5f5 0%, #0a6fd4 40%, #0758B8 70%, #054da8 100%)",
-                    WebkitBackgroundClip: "text",
-                    backgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
-                >
+                <span className="text-[#0758B8]">
                   con orden y claridad
                 </span>
               </motion.h1>

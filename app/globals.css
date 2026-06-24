@@ -155,10 +155,3 @@
     transition-duration: 0.01ms !important;
   }
 }
-
-.calendly-inline-widget {
-  min-width: 320px;
-  height: 630px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}

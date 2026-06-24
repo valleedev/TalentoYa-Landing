@@ -54,7 +54,7 @@ export function FeaturesSection() {
   return (
     <motion.section
       id="caracteristicas"
-      className="py-20 px-4 bg-[#E8F0F8]/40"
+      className="py-20 px-4 bg-white"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -90,7 +90,7 @@ export function FeaturesSection() {
             return (
               <motion.div
                 key={feature.title}
-                className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-[#E8F0F8]"
+                className="flex flex-col gap-4 p-6 bg-white rounded-2xl border border-[#e2e8f0]"
                 style={{ borderLeft: `4px solid ${colors.border}` }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

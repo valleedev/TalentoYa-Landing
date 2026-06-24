@@ -11,10 +11,8 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { demoSection } from "@/lib/data"
-import { CALENDLY_URL, DEMO_EMAIL } from "@/lib/constants"
+import { DEMO_EMAIL } from "@/lib/constants"
 import { privacyPath } from "@/lib/legal"
-
-const SHOW_CALENDLY = Boolean(CALENDLY_URL)
 
 const schema = z.object({
   nombre: z.string().min(2, "Ingresa tu nombre"),
@@ -57,7 +55,7 @@ function ContactForm() {
         <div className="w-16 h-16 bg-[#E8F0F8] rounded-full flex items-center justify-center">
           <CheckCircle className="h-8 w-8 text-[#0758B8]" />
         </div>
-        <p className="text-gray-700 font-medium max-w-xs">{demoSection.successMessage}</p>
+        <p className="text-[#061C4A]/70 font-medium max-w-xs">{demoSection.successMessage}</p>
       </motion.div>
     )
   }
@@ -112,7 +110,7 @@ function ContactForm() {
         Agendar mi demo
       </Button>
 
-      <p className="text-xs text-gray-400 text-center">
+      <p className="text-xs text-[#061C4A]/40 text-center">
         Sin compromiso • Te respondemos en menos de 2 horas. Consulta la{" "}
         <a
           href={privacyPath}
@@ -125,20 +123,11 @@ function ContactForm() {
   )
 }
 
-function CalendlyWidget() {
-  return (
-    <div
-      className="calendly-inline-widget w-full"
-      data-url={CALENDLY_URL}
-    />
-  )
-}
-
 export function DemoSection() {
   return (
     <motion.section
       id="demo"
-      className="py-24 px-4 bg-gray-50"
+      className="py-24 px-4 bg-white"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -180,7 +169,7 @@ export function DemoSection() {
             viewport={{ once: true }}
           >
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-6">
+              <h3 className="text-xl font-bold text-[#061C4A] mb-6">
                 {demoSection.bulletsHeading}
               </h3>
               <ul className="space-y-4">
@@ -198,7 +187,7 @@ export function DemoSection() {
                       <div className="w-10 h-10 bg-[#E8F0F8] rounded-lg flex items-center justify-center flex-shrink-0">
                         <Icon className="h-5 w-5 text-[#0758B8]" />
                       </div>
-                      <span className="text-gray-700 font-medium leading-relaxed pt-2">
+                      <span className="text-[#061C4A]/80 font-medium leading-relaxed pt-2">
                         {bullet.text}
                       </span>
                     </motion.li>
@@ -207,23 +196,23 @@ export function DemoSection() {
               </ul>
             </div>
 
-            <div className="bg-[#E8F0F8] border border-[#58B5E2]/30 rounded-xl p-6">
-              <blockquote className="text-gray-700 italic leading-relaxed mb-4">
+            <div className="bg-white border border-[#e2e8f0] rounded-2xl p-6">
+              <blockquote className="text-[#061C4A]/80 italic leading-relaxed mb-4">
                 &ldquo;Antes me tomaba todo un día hacer la nómina de mis 8 empleados. Ahora con
                 TalentoYa lo hago en 30 minutos y sin errores.&rdquo;
               </blockquote>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-sm font-bold text-gray-600">
+                <div className="w-10 h-10 bg-[#E8F0F8] rounded-full flex items-center justify-center text-sm font-bold text-[#0758B8]">
                   CM
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900 text-sm">Carlos Muñoz</div>
-                  <div className="text-gray-500 text-xs">Panadería San Carlos, Medellín</div>
+                  <div className="font-semibold text-[#061C4A] text-sm">Carlos Muñoz</div>
+                  <div className="text-[#061C4A]/50 text-xs">Panadería San Carlos, Medellín</div>
                 </div>
               </div>
             </div>
 
-            <p className="text-sm text-gray-500 font-medium">{demoSection.socialProof}</p>
+            <p className="text-sm text-[#061C4A]/50 font-medium">{demoSection.socialProof}</p>
           </motion.div>
 
           <motion.div
@@ -232,12 +221,12 @@ export function DemoSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-8">
+            <div className="bg-white border border-[#e2e8f0] rounded-2xl p-8">
               <div className="mb-6">
-                <h3 className="text-lg font-bold text-gray-900">{demoSection.formHeading}</h3>
-                <p className="text-sm text-gray-500 mt-1">{demoSection.formSubheading}</p>
+                <h3 className="text-lg font-bold text-[#061C4A]">{demoSection.formHeading}</h3>
+                <p className="text-sm text-[#061C4A]/50 mt-1">{demoSection.formSubheading}</p>
               </div>
-              {SHOW_CALENDLY ? <CalendlyWidget /> : <ContactForm />}
+              <ContactForm />
             </div>
           </motion.div>
         </div>

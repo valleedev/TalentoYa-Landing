@@ -13,7 +13,7 @@ const statColorMap: Record<"blue" | "green" | "purple", string> = {
 export function SocialProofSection() {
   return (
     <motion.section
-      className="py-20 px-4 bg-white"
+      className="py-20 px-4 bg-[#f5f7fb]"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -27,29 +27,29 @@ export function SocialProofSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-balance">
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#061C4A] text-balance">
             Ya confían en TalentoYa
           </h2>
 
           <motion.div
-            className="bg-[#E8F0F8] rounded-2xl p-8 md:p-12 relative"
+            className="bg-white border border-[#e2e8f0] rounded-2xl p-8 md:p-12 relative"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
             <Quote className="h-12 w-12 text-[#0758B8] mb-6 mx-auto" />
-            <blockquote className="text-xl md:text-2xl text-gray-700 font-medium leading-relaxed mb-8">
+            <blockquote className="text-xl md:text-2xl text-[#061C4A]/80 font-medium leading-relaxed mb-8">
               &ldquo;Antes me tomaba todo un día hacer la nómina de mis 8 empleados. Ahora con TalentoYa
               lo hago en 30 minutos y sin errores. Mi contador está feliz porque todo llega perfecto.&rdquo;
             </blockquote>
             <div className="flex items-center justify-center gap-4">
-              <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center text-2xl font-bold text-gray-600">
+              <div className="w-16 h-16 bg-[#E8F0F8] rounded-full flex items-center justify-center text-2xl font-bold text-[#0758B8]">
                 CM
               </div>
               <div className="text-left">
-                <div className="font-bold text-gray-900 text-lg">Carlos Muñoz</div>
-                <div className="text-gray-600">Dueño de Panadería San Carlos, Medellín</div>
+                <div className="font-bold text-[#061C4A] text-lg">Carlos Muñoz</div>
+                <div className="text-[#061C4A]/60">Dueño de Panadería San Carlos, Medellín</div>
               </div>
             </div>
           </motion.div>
@@ -66,7 +66,7 @@ export function SocialProofSection() {
                 <div className={`text-3xl font-bold ${statColorMap[stat.color]} mb-2`}>
                   {stat.value}
                 </div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-[#061C4A]/60">{stat.label}</div>
               </div>
             ))}
           </motion.div>
