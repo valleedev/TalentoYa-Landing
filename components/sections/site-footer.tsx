@@ -112,12 +112,6 @@ export function SiteFooter() {
               Política de privacidad
             </a>
             <a
-              href="/terminos"
-              className="text-gray-400 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#20C8B8] transition-colors"
-            >
-              Términos de Uso
-            </a>
-            <a
               href="https://jsvb.dev"
               target="_blank"
               rel="noopener noreferrer"
