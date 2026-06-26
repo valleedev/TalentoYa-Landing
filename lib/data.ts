@@ -89,7 +89,7 @@ export const features: Feature[] = [
     color: "green",
     title: "Control laboral",
     description:
-      "Contratos, certificados y reportes laborales generados desde el expediente. Plantillas para término fijo, indefinido y obra o labor, en PDF y sin errores de digitación.",
+      "Gestiona asistencias, permisos y vacaciones de todo el equipo desde un solo lugar. Reportes claros y al día para tomar mejores decisiones.",
     badge: "Cumple con la ley laboral colombiana",
   },
   {
@@ -105,7 +105,7 @@ export const features: Feature[] = [
     color: "orange",
     title: "Gestión de pagos",
     description:
-      "El pago de nómina fluye desde el expediente de cada empleado. Sin doble digitación, sin inconsistencias, sin multas.",
+      "El pago de nómina fluye desde el expediente de cada empleado. Sin doble digitación, sin inconsistencias.",
     badge: "Pensado para microempresas colombianas",
   },
 ]

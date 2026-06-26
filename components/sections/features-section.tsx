@@ -94,16 +94,16 @@ export function FeaturesSection() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col gap-3">
                   <img
                     src={talen.src}
                     alt={talen.alt}
-                    className="flex-shrink-0 w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-0.5"
-                    width={80}
-                    height={80}
+                    className="w-14 h-14 object-contain transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-0.5"
+                    width={56}
+                    height={56}
                     loading="lazy"
                   />
-                  <h3 className="text-lg sm:text-xl font-bold text-[#061C4A] leading-snug pt-1">
+                  <h3 className="text-lg sm:text-xl font-bold text-[#061C4A] leading-snug">
                     {feature.title}
                   </h3>
                 </div>
