@@ -19,7 +19,7 @@ export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="hero-gradient py-16 md:py-24 px-4 relative min-h-[85vh] flex items-center overflow-hidden"
+      className="hero-gradient pt-16 md:pt-24 pb-40 md:pb-56 px-4 relative min-h-[85vh] flex items-center overflow-hidden"
     >
       {/* Background decoration */}
       <div
