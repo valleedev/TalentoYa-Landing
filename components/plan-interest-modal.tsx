@@ -46,7 +46,7 @@ export function PlanInterestModal({ open, planName, onClose }: PlanInterestModal
       {open && (
         <motion.div
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
@@ -76,7 +76,7 @@ export function PlanInterestModal({ open, planName, onClose }: PlanInterestModal
               </div>
               <button
                 onClick={handleClose}
-                className="text-[#061C4A]/40 hover:text-[#061C4A] transition-colors mt-0.5"
+                className="text-[#061C4A]/40 hover:text-[#061C4A] transition-colors mt-0.5 cursor-pointer"
                 aria-label="Cerrar formulario"
               >
                 <X className="h-5 w-5" />
@@ -99,7 +99,7 @@ export function PlanInterestModal({ open, planName, onClose }: PlanInterestModal
                   </div>
                   <button
                     onClick={handleClose}
-                    className="w-full bg-[#0758B8] hover:bg-[#054da8] text-white font-medium py-2.5 px-4 rounded-xl transition-colors"
+                    className="w-full bg-[#0758B8] hover:bg-[#054da8] text-white font-medium py-2.5 px-4 rounded-xl transition-colors cursor-pointer"
                   >
                     Cerrar
                   </button>
@@ -141,7 +141,7 @@ export function PlanInterestModal({ open, planName, onClose }: PlanInterestModal
                     <button
                       type="submit"
                       disabled={status === "loading"}
-                      className="w-full bg-[#0758B8] hover:bg-[#054da8] disabled:opacity-60 text-white font-medium py-2.5 px-4 rounded-xl transition-colors flex items-center justify-center gap-2"
+                      className="w-full bg-[#0758B8] hover:bg-[#054da8] disabled:opacity-60 text-white font-medium py-2.5 px-4 rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer"
                     >
                       {status === "loading" ? "Enviando..." : <>Enviar solicitud <span aria-hidden>→</span></>}
                     </button>
