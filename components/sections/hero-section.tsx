@@ -19,7 +19,7 @@ export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="hero-gradient py-16 md:py-24 px-4 relative min-h-[85vh] flex items-center overflow-hidden"
+      className="hero-gradient pt-16 md:pt-24 pb-40 md:pb-56 px-4 relative min-h-[85vh] flex items-center overflow-hidden"
     >
       {/* Background decoration */}
       <div
@@ -154,9 +154,9 @@ export function HeroSection() {
             <motion.img
               src="/assets/talen/talen-empleado.png"
               alt="Talen, la mascota de TalentoYa — colibrí corporativo"
-              className="w-56 sm:w-72 md:w-80 lg:w-96 h-auto drop-shadow-xl"
-              width={384}
-              height={384}
+              className="w-72 sm:w-80 md:w-96 lg:w-[32rem] h-auto drop-shadow-xl"
+              width={512}
+              height={512}
               loading="eager"
               variants={floatVariant}
               animate="animate"

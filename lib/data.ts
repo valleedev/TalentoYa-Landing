@@ -22,6 +22,11 @@ export const navLinks: NavLink[] = [
   { href: "/#planes", label: "Planes" },
 ]
 
+export const dashboardShowcase = {
+  src: "/assets/app/dashboard-empleados.png",
+  alt: "Panel de TalentoYa — listado de empleados",
+}
+
 export type ColorKey = "blue" | "green" | "purple" | "orange"
 
 export interface Benefit {
@@ -74,33 +79,33 @@ export const features: Feature[] = [
   {
     icon: User,
     color: "blue",
-    title: "Perfil completo del empleado",
+    title: "Gestión de talento humano",
     description:
-      "Centraliza datos personales, contacto de emergencia, información bancaria y documentos en un solo expediente digital accesible desde cualquier dispositivo.",
+      "Centraliza el expediente digital de cada empleado: datos personales, contacto, información bancaria y documentos. Todo el equipo en un solo lugar, accesible desde cualquier dispositivo.",
     badge: "Un solo lugar para todo el equipo",
   },
   {
     icon: FileText,
     color: "green",
-    title: "Contratos y documentos digitales",
+    title: "Control laboral",
     description:
-      "Plantillas pre-configuradas para término fijo, indefinido y obra o labor. Generación automática, descarga en PDF, sin errores de digitación.",
+      "Gestiona asistencias, permisos y vacaciones de todo el equipo desde un solo lugar. Reportes claros y al día para tomar mejores decisiones.",
     badge: "Cumple con la ley laboral colombiana",
   },
   {
     icon: FileCheck,
     color: "purple",
-    title: "Certificados y reportes laborales",
+    title: "Manejo de administración",
     description:
-      "Genera certificados de trabajo e ingresos con los datos exactos del expediente. Profesionales, listos para entregar, en segundos.",
+      "Organiza la información de tu empresa sin Excel ni carpetas físicas. Historial de cargos, salarios y cambios de contrato siempre actualizado y a la mano.",
     badge: "Sin errores, sin demoras",
   },
   {
     icon: Calculator,
     color: "orange",
-    title: "Nómina integrada al expediente",
+    title: "Gestión de pagos",
     description:
-      "El pago de nómina fluye desde el expediente de cada empleado. Sin doble digitación, sin inconsistencias, sin multas.",
+      "El pago de nómina fluye desde el expediente de cada empleado. Sin doble digitación, sin inconsistencias.",
     badge: "Pensado para microempresas colombianas",
   },
 ]
