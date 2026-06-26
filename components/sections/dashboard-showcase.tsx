@@ -14,8 +14,8 @@ export function DashboardShowcase() {
   const scale = useTransform(scrollYProgress, [0, 1], [0.94, 1])
 
   return (
-    <div className="relative z-20 flex justify-center px-4 -mt-[160px] md:-mt-[220px]">
-      <div ref={ref} style={{ perspective: 1200 }} className="w-full max-w-5xl">
+    <div className="relative z-20 flex justify-center px-4 pb-12 -mt-[40px] md:-mt-[80px]">
+      <div ref={ref} style={{ perspective: 1200 }} className="w-full max-w-3xl">
         <motion.img
           src={dashboardShowcase.src}
           alt={dashboardShowcase.alt}
