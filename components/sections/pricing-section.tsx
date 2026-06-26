@@ -103,7 +103,7 @@ export function PricingSection() {
               <div className="text-4xl font-bold text-[#061C4A]">$150.000</div>
               <div className="text-[#061C4A]/50 text-sm">COP/mes</div>
               <Button
-                className="mt-4 bg-[#0758B8] hover:bg-[#054da8] text-white border-0"
+                className="mt-4 bg-[#0758B8] hover:bg-[#054da8] text-white border-0 cursor-pointer"
                 onClick={() => openModal("Founder")}
               >
                 Empieza ahora
@@ -173,14 +173,14 @@ export function PricingSection() {
                   {plan.highlighted ? (
                     <button
                       onClick={() => openModal(plan.name)}
-                      className="w-full bg-[#0758B8] hover:bg-[#054da8] text-white font-medium py-2.5 px-4 rounded-xl transition-colors flex items-center justify-center gap-2"
+                      className="w-full bg-[#0758B8] hover:bg-[#054da8] text-white font-medium py-2.5 px-4 rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer"
                     >
                       Empieza ahora <span aria-hidden>→</span>
                     </button>
                   ) : (
                     <button
                       onClick={() => openModal(plan.name)}
-                      className="w-full border border-[#061C4A]/30 hover:border-[#061C4A] text-[#061C4A] font-medium py-2.5 px-4 rounded-xl transition-colors"
+                      className="w-full border border-[#061C4A]/30 hover:border-[#061C4A] text-[#061C4A] font-medium py-2.5 px-4 rounded-xl transition-colors cursor-pointer"
                     >
                       Empieza ahora
                     </button>
