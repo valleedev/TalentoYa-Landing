@@ -32,20 +32,20 @@ const colorMap: Record<ColorKey, { bg: string; iconColor: string; border: string
 
 const talenByFeatureIndex: Record<number, { src: string; alt: string }> = {
   0: {
-    src: "/assets/talen/talen-empleado.png",
-    alt: "Talen presentando el expediente del empleado",
+    src: "/assets/talen/talen-expediente.png",
+    alt: "Talen con carpeta — gestión de talento humano",
   },
   1: {
-    src: "/assets/talen/talen-expediente.png",
-    alt: "Talen con carpeta de contratos y documentos digitales",
+    src: "/assets/talen/talen-completado.png",
+    alt: "Talen con checkmark — control laboral",
   },
   2: {
     src: "/assets/talen/talen-completado.png",
-    alt: "Talen con checkmark — certificados y reportes listos",
+    alt: "Talen con checkmark — manejo de administración",
   },
   3: {
-    src: "/assets/talen/talen-gestion.png",
-    alt: "Talen gestionando la nómina integrada",
+    src: "/assets/talen/talen-expediente.png",
+    alt: "Talen con carpeta — gestión de pagos",
   },
 }
 
@@ -95,22 +95,14 @@ export function FeaturesSection() {
                 viewport={{ once: true }}
               >
                 <div className="flex items-start gap-4">
-                  <div
-                    className={`relative flex-shrink-0 w-20 h-20 ${colors.bg} rounded-2xl flex items-end justify-center overflow-hidden transition-transform duration-300 group-hover:scale-105`}
-                  >
-                    <span
-                      className="absolute inset-x-0 top-0 h-1 rounded-full opacity-70"
-                      style={{ backgroundColor: colors.border }}
-                    />
-                    <img
-                      src={talen.src}
-                      alt={talen.alt}
-                      className="w-16 h-16 object-contain transition-transform duration-300 group-hover:-translate-y-0.5"
-                      width={64}
-                      height={64}
-                      loading="lazy"
-                    />
-                  </div>
+                  <img
+                    src={talen.src}
+                    alt={talen.alt}
+                    className="flex-shrink-0 w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-0.5"
+                    width={80}
+                    height={80}
+                    loading="lazy"
+                  />
                   <h3 className="text-lg sm:text-xl font-bold text-[#061C4A] leading-snug pt-1">
                     {feature.title}
                   </h3>
