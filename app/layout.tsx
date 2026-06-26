@@ -4,6 +4,7 @@ import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 import { ConsentManager } from "@/components/consent-manager"
+import { JsonLd } from "@/components/seo/json-ld"
 
 export const metadata: Metadata = {
   title: 'TalentoYa | Gestión de talento humano y nómina para microempresas',
@@ -24,21 +25,27 @@ export const metadata: Metadata = {
   authors: [{ name: 'TalentoYa | J. Sebastian Valle Barbaran' }],
   creator: 'TalentoYa | J. Sebastian Valle Barbaran',
   publisher: 'TalentoYa | J. Sebastian Valle Barbaran',
-  metadataBase: new URL('https://talentoya.vercel.app'),
+  metadataBase: new URL('https://talentoya.com.co'),
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
   openGraph: {
     title: 'TalentoYa | Gestión de talento humano y nómina para microempresas',
     description:
       'Simplifica la administración de tu equipo: contratos, nómina, seguridad social, turnos y vacaciones. Diseñado para independientes y microempresas en Colombia.',
-    url: 'https://talentoya.vercel.app',
+    url: 'https://talentoya.com.co',
     siteName: 'TalentoYa | J. Sebastian Valle Barbarán',
-    images: [
-      {
-        url: 'https://talentoya.vercel.app/image.png',
-        width: 1200,
-        height: 630,
-        alt: 'TalentoYa gestión de talento humano',
-      },
-    ],
     locale: 'es_CO',
     type: 'website',
   },
@@ -47,7 +54,6 @@ export const metadata: Metadata = {
     title: 'TalentoYa | Gestión de talento humano y nómina para microempresas e independientes.',
     description:
       'Un SaaS hecho para independientes y microempresas en Colombia. Administra contratos, nómina y seguridad social fácilmente.',
-    images: ['https://talentoya.vercel.app/image.png'],
     creator: '@ValleeDev',
   },
   icons: {
@@ -66,8 +72,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es">
+    <html lang="es-CO">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+        <JsonLd />
         {children}
         <ConsentManager />
       </body>

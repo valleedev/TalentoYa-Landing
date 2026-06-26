@@ -13,7 +13,7 @@ export const legalConfig = {
   privacyEmail: pending("CORREO DE PROTECCION DE DATOS"),
   supportEmail: "info.talentoya@gmail.com",
   phone: pending("TELEFONO"),
-  websiteUrl: "https://talentoya.vercel.app",
+  websiteUrl: "https://talentoya.com.co",
   effectiveDate: "2026-06-10",
   lastUpdatedDate: "2026-06-18",
 } as const
