@@ -139,7 +139,7 @@ export function HeroSection() {
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle className="h-4 w-4" style={{ color: "var(--ty-turquesa)" }} />
-                <span>Listo en 5 minutos</span>
+                <span>Listo en poco tiempo</span>
               </div>
             </motion.div>
           </motion.div>
