@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { CheckCircle } from "lucide-react"
 import { features, type ColorKey } from "@/lib/data"
 
 const colorMap: Record<ColorKey, { bg: string; iconColor: string; border: string; badge: string }> = {
@@ -33,20 +32,20 @@ const colorMap: Record<ColorKey, { bg: string; iconColor: string; border: string
 
 const talenByFeatureIndex: Record<number, { src: string; alt: string }> = {
   0: {
-    src: "/assets/talen/talen-expediente.png",
-    alt: "Talen con carpeta — expediente digital",
+    src: "/assets/talen/talen-empleado.png",
+    alt: "Talen presentando el expediente del empleado",
   },
   1: {
-    src: "/assets/talen/talen-completado.png",
-    alt: "Talen con carpeta — documentos digitales",
+    src: "/assets/talen/talen-expediente.png",
+    alt: "Talen con carpeta de contratos y documentos digitales",
   },
   2: {
     src: "/assets/talen/talen-completado.png",
-    alt: "Talen con checkmark — certificados listos",
+    alt: "Talen con checkmark — certificados y reportes listos",
   },
   3: {
-    src: "/assets/talen/talen-expediente.png",
-    alt: "Talen con checkmark — nómina lista",
+    src: "/assets/talen/talen-gestion.png",
+    alt: "Talen gestionando la nómina integrada",
   },
 }
 
@@ -85,43 +84,45 @@ export function FeaturesSection() {
         >
           {features.map((feature, index) => {
             const colors = colorMap[feature.color]
-            const Icon = feature.icon
             const talen = talenByFeatureIndex[index]
             return (
               <motion.div
                 key={feature.title}
-                className="flex flex-col gap-4 p-6 bg-white rounded-2xl border border-[#e2e8f0]"
-                style={{ borderLeft: `4px solid ${colors.border}` }}
+                className="group relative flex flex-col gap-5 p-6 sm:p-7 bg-white rounded-2xl border border-[#e2e8f0] transition-all duration-300 hover:-translate-y-1 hover:border-transparent hover:shadow-[0_18px_40px_-12px_rgba(6,28,74,0.18)]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-start justify-between gap-4">
-                  {!talen && (
-                    <div
-                      className={`w-12 h-12 ${colors.bg} rounded-xl flex items-center justify-center flex-shrink-0`}
-                    >
-                      <Icon className="h-6 w-6" style={{ color: colors.iconColor }} />
-                    </div>
-                  )}
-                  {talen && (
+                <div className="flex items-start gap-4">
+                  <div
+                    className={`relative flex-shrink-0 w-20 h-20 ${colors.bg} rounded-2xl flex items-end justify-center overflow-hidden transition-transform duration-300 group-hover:scale-105`}
+                  >
+                    <span
+                      className="absolute inset-x-0 top-0 h-1 rounded-full opacity-70"
+                      style={{ backgroundColor: colors.border }}
+                    />
                     <img
                       src={talen.src}
                       alt={talen.alt}
-                      className="w-16 h-16 object-contain flex-shrink-0"
+                      className="w-16 h-16 object-contain transition-transform duration-300 group-hover:-translate-y-0.5"
                       width={64}
                       height={64}
                       loading="lazy"
                     />
-                  )}
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#061C4A] leading-snug pt-1">
+                    {feature.title}
+                  </h3>
                 </div>
-                <h3 className="text-xl font-bold text-[#061C4A]">{feature.title}</h3>
+
                 <p className="text-[#061C4A]/70 leading-relaxed flex-1">{feature.description}</p>
-                <div className={`inline-flex items-center gap-2 text-sm font-medium ${colors.badge}`}>
-                  <CheckCircle className="h-4 w-4" />
-                  <span>{feature.badge}</span>
-                </div>
+
+                <span
+                  className={`inline-flex w-fit items-center rounded-full px-3 py-1.5 text-sm font-semibold ${colors.bg} ${colors.badge}`}
+                >
+                  {feature.badge}
+                </span>
               </motion.div>
             )
           })}
