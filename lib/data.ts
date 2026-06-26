@@ -22,6 +22,11 @@ export const navLinks: NavLink[] = [
   { href: "/#planes", label: "Planes" },
 ]
 
+export const dashboardShowcase = {
+  src: "/assets/app/dashboard-empleados.png",
+  alt: "Panel de TalentoYa — listado de empleados",
+}
+
 export type ColorKey = "blue" | "green" | "purple" | "orange"
 
 export interface Benefit {
